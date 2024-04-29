@@ -1,0 +1,320 @@
+body {
+  font-family: "Work Sans", sans-serif;
+  margin: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Center the brand name */
+  align-items: center;
+  position: fixed; /* Fixed position */
+  width: 100%; /* Full width */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  padding: 10px 20px; /* Padding around content */
+  background-color: transparent; /* Semi-transparent background */
+  color: #fff;
+  z-index: 101;
+  height: 25px; /* Ensure it's above the hero section */
+}
+
+.menu-icon {
+  position: absolute; /* Absolute positioning relative to header */
+  top: 27px; /* Top padding */
+  left: 10px; /* Left padding */
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 102; /* Above the header content */
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.brand-name {
+  padding-top: 20px;
+  position: relative; /* Relative to its normal position */
+  font-size: 26px;
+  height: 24px;
+  white-space: nowrap; /* Prevents wrapping and ensures accurate centering */
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%; /* Full width overlay */
+  height: 100%; /* Full height overlay */
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+.menu {
+  position: fixed;
+  top: 50px;
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  left: 10px;
+  z-index: 103; /* Above the overlay and header */
+}
+
+.menu-category {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.menu-item {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-icon.toggle .bar:nth-child(1),
+.menu-icon.toggle .bar:nth-child(2) {
+  background-color: black; /* Black bars for visibility */
+}
+
+.menu-icon.toggle .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.toggle .bar:nth-child(2) {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.hero-section {
+  position: relative; /* Position relative to allow correct z-index stacking */
+  height: 100vh;
+  width: 100%;
+  background-image: url("images/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 99; /* Below the header and overlay */
+}
+.unlock-box {
+  position: absolute; /* Changed from fixed to absolute */
+  top: 60%; /* Centered vertically inside the .hero-section */
+  left: 50%; /* Centered horizontally */
+  transform: translate(-50%, -50%); /* Center the element to the exact middle */
+  width: 80%; /* Adjust width as needed */
+  max-width: 400px; /* Maximum width */
+  height: auto; /* Height is set to auto, so it adjusts based on content */
+  margin: auto; /* For additional centering */
+  padding: 2em; /* Padding inside the box */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+    169deg,
+    rgba(255, 255, 255, 0.12) 2.81%,
+    rgba(166, 12, 113, 0.12) 91.66%
+  );
+  box-shadow: 0px 4px 7.3px 0px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(5.449999809265137px);
+  /* No need for opacity and pointer-events since it should be always visible */
+  z-index: 10;
+  padding: 10px;
+  opacity: 0; /* Initially make it invisible */
+  visibility: hidden; /* Hide the box */
+  transition: opacity 0.5s, visibility 2s; /* Ensure it is above the .hero-section content but below the header */
+}
+.unlock-box h2, /* Assuming 'INTRODUCING' is within an <h2> */
+.unlock-box h1 {
+  /* Assuming 'REGALIUM' is within an <h1> */
+  text-align: center; /* Center the text */
+  width: 100%; /* Full width */
+  margin: 0.5em 0; /* Spacing for aesthetic */
+}
+
+.unlock-box p {
+  width: 279px;
+  height: 144px;
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  padding-left: 20px; /* 150% */
+}
+
+.unlock-box h2 {
+  padding-top: 70px;
+  padding-bottom: 8px;
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.unlock-box h1 {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding-bottom: 47px;
+}
+.section.theLocation {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f1f6;
+}
+
+.section.theLocation .image-container {
+  padding: 30px;
+  width: 327px;
+  height: 191px;
+  /* Add any additional styling here */
+}
+
+.section.theLocation .image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.section.theLocation .text-container {
+  margin-top: 10px;
+  padding: 30px;
+  padding-top: 0px;
+  width: 295px;
+  height: auto;
+}
+
+.section.theLocation .location-heading {
+  color: #000;
+  font-family: Merriweather;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-left: 16px;
+}
+
+.section.theLocation .paragraph-box {
+  padding-left: 16px;
+  width: 100%;
+  height: auto;
+  color: #000;
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+.section.white-background {
+  background-color: #fff; /* White background */
+  padding-top: 40px; /* 20px gap from the previous section */
+}
+
+.blueprints-heading {
+  padding-left: 30px;
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 4px;
+  text-transform: uppercase; /* Gap after the heading */
+}
+
+.planned-innovation-heading {
+  padding-left: 30px;
+  letter-spacing: 2.4px;
+  width: 343px;
+  height: 60px;
+  font-family: "Work Sans";
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  margin-top: 21px; /* Gap before the heading */
+}
+
+.paragraph-box2 {
+  align-self: stretch;
+  line-height: 160%; /* 19.2px */
+  padding-left: 30px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  width: 343px;
+  height: 114px;
+  font-size: 12px;
+  /* Other styling properties for the paragraph box */
+}
+
+.image-gallery1 {
+  /* Horizontal image grid styling */
+  /* You can use flexbox or CSS grid to create the image grid */
+  /* For example, if using flexbox: */
+
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  align-items: center; /* Adjust as needed */
+}
+
+/* Style for individual images in the gallery goes here */
+.image-gallery {
+  display: flex;
+  flex-direction: column; /* Stack sliders vertically */
+}
+
+.slider1 {
+  max-width: 390px;
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
+  margin-top: 24px; /* Adjust as needed */
+}
+.slider2 {
+  max-width: 390px;
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
+  margin-top: 4px; /* Adjust as needed */
+}
+
+.slider1 img {
+  width: 175px; /* Width for images in the first slider */
+  height: 128px;
+  padding: 5px; /* Height for images in the first slider */
+
+  object-fit: contain; /* Adjust spacing between images */
+}
+
+.slider2 img {
+  width: 315px; /* Width for images in the first slider */
+  height: 180px;
+  padding: 5px; /* Height for images in the first slider */
+
+  object-fit: contain; /* Adjust spacing between images */
+}
+
+.slider:nth-child(2) img {
+  width: 315px; /* Width for images in the second slider */
+  height: 180px; /* Height for images in the second slider */
+
+  object-fit: contain; /* Adjust spacing between images */
+}

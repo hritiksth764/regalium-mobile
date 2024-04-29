@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Header</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:400"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="brand-name"></div>
+    </header>
+    <div class="hero-section">
+      <div class="unlock-box">
+        <h2>INTRODUCING</h2>
+        <h1>REGALIUM</h1>
+        <p>
+          Designed for India's most progressive communities, Regalium is a
+          revolutionary mixed-use hub in Koramangala, Bengaluru. We elevate how
+          our exclusive community can play, indulge, shop, connect, and work
+          through personalized services, advanced technological capabilities,
+          meticulous curation, and a bold new vision for the future.
+        </p>
+      </div>
+    </div>
+    <div class="section theLocation">
+      <div class="image-container">
+        <img src="image copy.png" alt="Image Description" />
+      </div>
+      <div class="text-container">
+        <h2 class="location-heading">THE LOCATION</h2>
+        <div class="paragraph-box">
+          <p>
+            Our location strategically represents both our innovative vision and
+            the Machani Group legacy. As the heart of the dynamic city of
+            Bengaluru, Koramangala is the perfect location for our exclusive
+            group of members to come together. There is also a growing gap
+            between people, physical spaces, and culture in Bengaluru, and by
+            being situated at Koramangala, Regalium is uniquely poised to
+            succeed as a luxurious and thriving community hub.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="section white-background">
+      <h2 class="blueprints-heading">Blueprints</h2>
+      <h2 class="planned-innovation-heading">PLANNED WITH INNOVATION</h2>
+      <div class="paragraph-box2">
+        <p>
+          We are creating a community for and with India's most progressive
+          leaders through curated offerings that encourage networking and
+          connection. We offer members a multipurpose, hyper-personalized
+          environment that caters to a wide range of needs and desires. At
+          Regalium, luxury and community are powered by innovation.
+        </p>
+      </div>
+      <div class="image-gallery">
+        <div class="slider1">
+          <!-- First horizontal image slider -->
+          <img src="image copy.png" alt="Image 1" />
+          <img src="image copy.png" alt="Image 2" />
+          <img src="image copy.png" alt="Image 2" />
+          <img src="image copy.png" alt="Image 2" />
+          <!-- Add more images as needed -->
+        </div>
+        <div class="slider2">
+          <!-- Second horizontal image slider -->
+          <img src="image copy.png" alt="Image 3" />
+          <img src="image copy.png" alt="Image 4" />
+          <!-- Add more images as needed -->
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay">
+      <nav class="menu">
+        <h2 class="menu-category">Regalium</h2>
+        <a class="menu-item" href="#">Blueprints</a>
+        <a class="menu-item" href="#">Story</a>
+        <a class="menu-item" href="#">Merit</a>
+        <a class="menu-item" href="#">Experience</a>
+        <a class="menu-item" href="#">Epicurean</a>
+        <h2 class="menu-category" onclick="toggleProvenance()">Provenance</h2>
+        <div id="provenance-menu" class="provenance-menu">
+          <a class="menu-item" href="#">Blueprints</a>
+          <a class="menu-item" href="#">Story</a>
+          <a class="menu-item" href="#">Merit</a>
+          <a class="menu-item" href="#">Experience</a>
+          <a class="menu-item" href="#">Epicurean</a>
+        </div>
+      </nav>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
