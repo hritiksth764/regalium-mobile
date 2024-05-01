@@ -98,7 +98,7 @@ body {
   position: relative; /* Position relative to allow correct z-index stacking */
   height: 100vh;
   width: 100%;
-  background-image: url("images/image.png");
+  background-image: url("image copy 6.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -284,7 +284,7 @@ body {
 .slider1 {
   max-width: 390px;
   display: flex;
-  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-x: hidden; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
   margin-top: 24px; /* Adjust as needed */
 }
@@ -317,4 +317,56 @@ body {
   height: 180px; /* Height for images in the second slider */
 
   object-fit: contain; /* Adjust spacing between images */
+}
+
+.image-slider {
+  display: flex;
+  overflow-x: auto;
+  width: auto;
+  height: auto;
+  position: relative;
+  scroll-behavior: smooth;
+  padding-top: 32px;
+  margin-bottom: 100px;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 477px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 010px; /* Aligns text to the bottom */
+}
+
+.image-text {
+  color: #fff;
+  padding-left: 10px;
+  font-family: "Merriweather", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  padding: 10px; /* Padding from the bottom and left of the image */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent background for better readability */
+}
+
+/* Optional: Hide scrollbar */
+.image-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.image-slider {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
