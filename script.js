@@ -2,9 +2,16 @@ function smoothTransition(url) {
   localStorage.setItem("scrollPosition", window.pageYOffset); // Save the current scroll position
   document.body.style.opacity = "0"; // Start the fade-out
   setTimeout(() => {
-    window.location.href = url; // Change the page after the fade-out
-  }, 500); // This should match the duration of the CSS transition
+    window.location.href = url; // Redirect to the target URL after the fade-out
+  }, 500); // The duration should match the CSS transition
 }
+
+// Event to restore scroll position when the page is loaded or revisited via back button
+window.addEventListener("pageshow", function (event) {
+  document.body.style.opacity = "1"; // Ensure the page is visible
+  const savedPosition = localStorage.getItem("scrollPosition") || 0; // Retrieve the saved scroll position, default to 0 if none
+  window.scrollTo(0, savedPosition); // Scroll to the saved position
+});
 function toggleMenu() {
   var menuIcon = document.querySelector(".menu-icon");
   var overlay = document.getElementById("overlay");
