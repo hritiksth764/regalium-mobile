@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Header</title>
+    <link rel="stylesheet" href="experiences.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:400"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="brand-name"></div>
+    </header>
+    <div id="overlay" class="overlay">
+      <nav class="menu">
+        <h2 class="menu-category">Regalium</h2>
+        <a class="menu-item" href="#">Blueprints</a>
+        <a class="menu-item" href="#">Story</a>
+        <a class="menu-item" href="#">Merit</a>
+        <a class="menu-item" href="#">Experience</a>
+        <a class="menu-item" href="#">Epicurean</a>
+        <h2 class="menu-category" onclick="toggleProvenance()">Provenance</h2>
+        <div id="provenance-menu" class="provenance-menu">
+          <a class="menu-item" href="#">Blueprints</a>
+          <a class="menu-item" href="#">Story</a>
+          <a class="menu-item" href="#">Merit</a>
+          <a class="menu-item" href="#">Experience</a>
+          <a class="menu-item" href="#">Epicurean</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <h2>DRIVEN WITH INNOVATION</h2>
+      <h1>JOURNEY INTO THE FUTURE</h1>
+      <p>
+        Regalium is anchored in the four cornerstones of Luxury, Heritage,
+        Innovation, Community. As a singular destination, Regalium fosters art,
+        culture, and innovation. Our approach to luxury is founded on
+        hyper-personalized, tech-driven services that anticipate our user's
+        needs—establishing Regalium's values as a pioneering, futuristic
+        risk-taker.
+      </p>
+      <div class="card">
+        <img
+          src="image copy 7.png"
+          alt="Image Description"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3>Exclusive Access</h3>
+          <p>
+            With exclusive access for the luxury retail audience, Regalium
+            ensures an intimate and bespoke shopping journey, free from the
+            usual hustle and tailored to the discerning few.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="image copy 7.png"
+          alt="Image Description"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3>Exclusive Access</h3>
+          <p>
+            With exclusive access for the luxury retail audience, Regalium
+            ensures an intimate and bespoke shopping journey, free from the
+            usual hustle and tailored to the discerning few.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="image copy 7.png"
+          alt="Image Description"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3>Exclusive Access</h3>
+          <p>
+            With exclusive access for the luxury retail audience, Regalium
+            ensures an intimate and bespoke shopping journey, free from the
+            usual hustle and tailored to the discerning few.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="image copy 7.png"
+          alt="Image Description"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3>Exclusive Access</h3>
+          <p>
+            With exclusive access for the luxury retail audience, Regalium
+            ensures an intimate and bespoke shopping journey, free from the
+            usual hustle and tailored to the discerning few.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.add("fade-in");
+      });
+    </script>
+  </body>
+</html>

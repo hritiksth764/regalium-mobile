@@ -370,13 +370,6 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-body,
-html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
 .container {
   width: 90%;
   margin: 20px auto;
@@ -501,6 +494,17 @@ p {
   text-align: center; /* Ensures text is centered if it wraps to a new line */
 }
 
+.experience-link {
+  text-decoration: none; /* Removes underline from links */
+  color: black; /* Set the text color to black */
+  display: block; /* Makes the link fill the entire area of the div for better clickability */
+  width: 100%; /* Ensures the link covers the whole width of the box */
+  height: 100%; /* Ensures the link covers the full height of the box */
+}
+body {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
 @media (max-width: 768px) {
   .image-grid {
     flex-direction: column;

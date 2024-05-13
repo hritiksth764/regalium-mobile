@@ -1,3 +1,10 @@
+function smoothTransition(url) {
+  document.body.style.opacity = "0"; // Start the fade-out
+  setTimeout(() => {
+    window.location.href = url; // Change the page after the fade-out
+  }, 500); // This should match the duration of the CSS transition
+}
+
 function toggleMenu() {
   var menuIcon = document.querySelector(".menu-icon");
   var overlay = document.getElementById("overlay");

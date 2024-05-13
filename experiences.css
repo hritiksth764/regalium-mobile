@@ -1,0 +1,186 @@
+body {
+  font-family: "Work Sans", sans-serif;
+
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+  transition: opacity 5s ease;
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Center the brand name */
+  align-items: center;
+  position: fixed; /* Fixed position */
+  width: 100%; /* Full width */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  padding: 10px 20px; /* Padding around content */
+  background-color: transparent; /* Semi-transparent background */
+  color: #fff;
+  z-index: 101;
+  height: 25px; /* Ensure it's above the hero section */
+}
+
+.menu-icon {
+  position: absolute; /* Absolute positioning relative to header */
+  top: 20px; /* Top padding */
+  left: 20px; /* Left padding */
+
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 102; /* Above the header content */
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+.brand-name {
+  padding-top: 20px;
+  position: relative; /* Relative to its normal position */
+  font-size: 26px;
+  height: 24px;
+  white-space: nowrap; /* Prevents wrapping and ensures accurate centering */
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%; /* Full width overlay */
+  height: 100%; /* Full height overlay */
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+.menu {
+  position: fixed;
+  top: 50px;
+  width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  left: 10px;
+  z-index: 103; /* Above the overlay and header */
+}
+
+.menu-category {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.menu-item {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.menu-icon.toggle .bar:nth-child(1),
+.menu-icon.toggle .bar:nth-child(2) {
+  background-color: black; /* Black bars for visibility */
+}
+
+.menu-icon.toggle .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.toggle .bar:nth-child(2) {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.container {
+  margin-top: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.card {
+  border-radius: 4px;
+  width: auto;
+  height: 455px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: left;
+  flex: 1;
+  border-radius: 4px;
+  background: #e0e0e8;
+}
+
+.card-content h3 {
+  color: #1d1d1d;
+
+  font-family: Merriweather;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-content p {
+  color: #1d1d1d;
+
+  font-family: "Work Sans";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 19.2px */
+}
+
+.experience-box {
+  margin-bottom: 100px;
+  width: auto;
+  padding: 8px 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  border: 1px solid #000;
+  text-align: center; /* Ensures text is centered if it wraps to a new line */
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    flex-direction: column;
+  }
+  .image-grid img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
