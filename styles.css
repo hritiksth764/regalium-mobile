@@ -501,10 +501,7 @@ p {
   width: 100%; /* Ensures the link covers the whole width of the box */
   height: 100%; /* Ensures the link covers the full height of the box */
 }
-body {
-  transition: opacity 0.5s ease;
-  opacity: 1;
-}
+
 @media (max-width: 768px) {
   .image-grid {
     flex-direction: column;

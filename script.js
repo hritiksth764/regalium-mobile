@@ -1,17 +1,55 @@
+// Document Ready: Handle immediate DOM-dependent setups
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed");
+  document.body.classList.add("fade-in");
+});
+
+// Full Page Load: Adjust actions that depend on all resources being loaded
+window.addEventListener("load", function () {
+  console.log("All resources finished loading");
+
+  // Set navigating flag when navigating to experience.html
+  var linksToExperience = document.querySelectorAll(".experience-link");
+  linksToExperience.forEach((link) => {
+    link.addEventListener("click", () => {
+      localStorage.setItem("navigatingToExperience", "true");
+    });
+  });
+
+  // Only reset to top if not coming back from an experience navigation
+  if (!localStorage.getItem("navigatingToExperience")) {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  }
+});
+
+// Assuming smoothTransition is used for navigating away
 function smoothTransition(url) {
-  localStorage.setItem("scrollPosition", window.pageYOffset); // Save the current scroll position
-  document.body.style.opacity = "0"; // Start the fade-out
+  localStorage.setItem("scrollPosition", window.pageYOffset); // Save current scroll position
+  document.body.style.opacity = "0";
   setTimeout(() => {
-    window.location.href = url; // Redirect to the target URL after the fade-out
-  }, 500); // The duration should match the CSS transition
+    window.location.href = url;
+  }, 500);
 }
 
-// Event to restore scroll position when the page is loaded or revisited via back button
+// Page Show: Used for restoring scroll position correctly when coming back from another page
 window.addEventListener("pageshow", function (event) {
-  document.body.style.opacity = "1"; // Ensure the page is visible
-  const savedPosition = localStorage.getItem("scrollPosition") || 0; // Retrieve the saved scroll position, default to 0 if none
-  window.scrollTo(0, savedPosition); // Scroll to the saved position
+  document.body.style.opacity = "1";
+  if (localStorage.getItem("navigatingToExperience") && event.persisted) {
+    const savedPosition = parseInt(
+      localStorage.getItem("scrollPosition") || 0,
+      10
+    );
+    console.log("Restoring scroll position to:", savedPosition);
+    setTimeout(() => {
+      window.scrollTo(0, savedPosition);
+      localStorage.removeItem("scrollPosition");
+      localStorage.removeItem("navigatingToExperience");
+    }, 100);
+  }
 });
+
 function toggleMenu() {
   var menuIcon = document.querySelector(".menu-icon");
   var overlay = document.getElementById("overlay");
