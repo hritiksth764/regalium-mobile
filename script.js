@@ -26,27 +26,44 @@ window.addEventListener("load", function () {
 
 // Assuming smoothTransition is used for navigating away
 function smoothTransition(url) {
-  localStorage.setItem("scrollPosition", window.pageYOffset); // Save current scroll position
-  document.body.style.opacity = "0";
+  const overlay = document.createElement("div");
+  overlay.className = "overlay";
+  document.body.appendChild(overlay);
+
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "100%";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "white";
+  overlay.style.zIndex = "9999";
+  overlay.style.transition = "left 1s";
+  overlay.style.left = "0";
+
   setTimeout(() => {
     window.location.href = url;
-  }, 500);
+  }, 1000); // Duration should match the transition duration
 }
 
 // Page Show: Used for restoring scroll position correctly when coming back from another page
 window.addEventListener("pageshow", function (event) {
+  console.log("Page show event triggered:", event.persisted);
   document.body.style.opacity = "1";
+
+  // Add a mobile-specific condition to check event.persisted to handle caching issues
   if (localStorage.getItem("navigatingToExperience") && event.persisted) {
     const savedPosition = parseInt(
       localStorage.getItem("scrollPosition") || 0,
       10
     );
     console.log("Restoring scroll position to:", savedPosition);
+
     setTimeout(() => {
       window.scrollTo(0, savedPosition);
+      console.log("Scroll restoration complete on mobile.");
       localStorage.removeItem("scrollPosition");
       localStorage.removeItem("navigatingToExperience");
-    }, 100);
+    }, 300); // Increased timeout for mobile
   }
 });
 
