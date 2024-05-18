@@ -661,7 +661,17 @@ html {
   font-size: 16px;
   font-family: "Merriweather", serif;
   margin: 0;
-  color: #f0f0f0; /* Ensure the text color matches the design */
+  color: #f0f0f0;
+  color: #fff;
+
+  text-align: center;
+  font-family: Merriweather;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase; /* Ensure the text color matches the design */
 }
 .footer {
   width: 100%;
@@ -673,6 +683,7 @@ html {
   justify-content: space-between; /* Space between the top and bottom sections */
   align-items: center;
   padding: 20px;
+  padding-top: 0px;
   box-sizing: border-box; /* Ensure padding is included in height */
 }
 
@@ -689,7 +700,7 @@ html {
   color: white;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 100px;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -752,6 +763,16 @@ html {
   gap: 54px;
 }
 
+.contact p {
+  color: #cfbd98;
+
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.6px;
+}
 @media (max-width: 768px) {
   .image-grid {
     flex-direction: column;
