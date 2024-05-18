@@ -621,7 +621,7 @@ html {
 
 .content-container {
   width: 100%;
-  max-width: 390px;
+  max-width: auto;
   height: 425px;
   background: url("provenance.png") no-repeat center center/cover;
   display: flex;
@@ -665,7 +665,7 @@ html {
 }
 .footer {
   width: 100%;
-  max-width: 390px;
+  max-width: auto;
   height: 512px;
   background: #021712;
   display: flex;
