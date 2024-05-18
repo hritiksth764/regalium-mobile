@@ -415,10 +415,8 @@ body.fade-in .unlock-box {
 
 .container {
   width: 90%;
-
+  margin: 20px auto;
   max-width: 1200px;
-  margin-left: 16px;
-  margin-right: 16px;
 }
 
 .container h2 {
