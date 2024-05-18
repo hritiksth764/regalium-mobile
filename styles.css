@@ -243,17 +243,26 @@ body.fade-in .unlock-box {
 }
 
 .blueprints-heading {
-  padding-left: 30px;
+  padding-left: 16px;
   font-family: "Work Sans";
   font-size: 12px;
   font-weight: 400;
   color: #000;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  color: #a6a171;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
   text-transform: uppercase; /* Gap after the heading */
 }
 
 .planned-innovation-heading {
-  padding-left: 30px;
+  padding-left: 16px;
   letter-spacing: 2.4px;
   width: 343px;
   height: 60px;
@@ -261,13 +270,35 @@ body.fade-in .unlock-box {
   font-size: 24px;
   font-weight: 400;
   color: #000;
-  margin-top: 21px; /* Gap before the heading */
+  margin-top: 12px;
+  margin-bottom: 12px; /* Gap before the heading */
+}
+
+.blueprints-heading2 {
+  padding-left: 16px;
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  color: #a6a171;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-transform: uppercase; /* Gap after the heading */
 }
 
 .paragraph-box2 {
   align-self: stretch;
+  width: auto;
   line-height: 160%; /* 19.2px */
-  padding-left: 30px;
+  padding-left: 16px;
+  padding-right: 16px;
   font-family: "Work Sans";
   font-style: normal;
   font-weight: 400;
@@ -384,8 +415,10 @@ body.fade-in .unlock-box {
 
 .container {
   width: 90%;
-  margin: 20px auto;
+
   max-width: 1200px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .container h2 {
