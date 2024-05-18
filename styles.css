@@ -50,11 +50,12 @@ body {
 .overlay {
   display: none;
   position: fixed;
-  width: 100%; /* Full width overlay */
+  width: 296px; /* Full width overlay */
   height: 100%; /* Full height overlay */
   top: 0;
   left: 0;
   background-color: white;
+
   z-index: 100;
 }
 
@@ -467,7 +468,7 @@ p {
 .slider-container {
   overflow-x: auto; /* Allows horizontal scrolling */
   white-space: nowrap;
-  margin-bottom: 192px; /* Keeps images in a single line */
+  margin-bottom: 100px; /* Keeps images in a single line */
 }
 
 .image-slider img {
