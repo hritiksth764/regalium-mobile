@@ -149,7 +149,8 @@ body {
 }
 
 .container {
-  max-width: auto;
+  overflow-x: hidden;
+  max-width: 390px;
 
   margin-left: 16px;
   margin-right: 16px;

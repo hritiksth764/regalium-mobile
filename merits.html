@@ -62,9 +62,11 @@
           <li><a href="#" class="regalium">Regalium</a></li>
           <li><a href="#">Story</a></li>
           <li><a href="#">Blueprints</a></li>
-          <li><a href="#">Experience</a></li>
+          <li><a class="menu-item" href="experiences.html">Experience</a></li>
           <li><a href="#">Epicurean</a></li>
-          <li><a href="#">Merits</a></li>
+          <li>
+            <a class="menu-item" href="merits.html" id="merits-link">Merit</a>
+          </li>
           <hr class="separator" />
           <li class="dropdown">
             <a href="#" class="provenance" onclick="toggleDropdown(event)"
@@ -181,6 +183,37 @@
 
       // Initialize slider
       showSlide(currentIndex);
+      document.addEventListener("DOMContentLoaded", function () {
+        const meritsLink = document.getElementById("merits-link");
+        const experiencesLink = document.getElementById("experiences-link");
+        const overlay = document.querySelector(".overlay");
+
+        meritsLink.addEventListener("click", function (event) {
+          const currentPage = window.location.pathname.split("/").pop();
+          if (currentPage === "merits.html") {
+            event.preventDefault();
+            overlay.classList.remove("active");
+            window.location.reload();
+          }
+        });
+
+        experiencesLink.addEventListener("click", function (event) {
+          const currentPage = window.location.pathname.split("/").pop();
+          if (currentPage === "experiences.html") {
+            event.preventDefault();
+            overlay.classList.remove("active");
+            window.location.reload();
+          }
+        });
+
+        function toggleMenu() {
+          overlay.classList.toggle("active");
+        }
+
+        document
+          .querySelector(".menu-icon")
+          .addEventListener("click", toggleMenu);
+      });
     </script>
   </body>
 </html>
