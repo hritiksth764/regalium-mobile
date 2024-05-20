@@ -68,17 +68,12 @@ window.addEventListener("pageshow", function (event) {
 });
 
 function toggleMenu() {
-  var menuIcon = document.querySelector(".menu-icon");
-  var overlay = document.getElementById("overlay");
-
-  // Toggle the appearance of the overlay and the menu icon
-  if (overlay.style.display === "block") {
-    overlay.style.display = "none";
-    menuIcon.classList.remove("toggle");
-  } else {
-    overlay.style.display = "block";
-    menuIcon.classList.add("toggle");
-  }
+  document.querySelector(".overlay").classList.toggle("active");
+}
+function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdown = event.target.nextElementSibling;
+  dropdown.classList.toggle("show");
 }
 
 function toggleProvenance() {
@@ -100,6 +95,26 @@ window.addEventListener("scroll", function () {
 var desktopSite = "https://regalium.vercel.app";
 var mobileSite = "https://regalium-mobile.vercel.app";
 
+function toggleText(element) {
+  const imageText = element.closest(".image-text");
+  const shortText = imageText.querySelector(".short-text");
+  const longText = imageText.querySelector(".long-text");
+  const isExpanded = longText.classList.contains("expanded");
+
+  if (isExpanded) {
+    longText.classList.remove("expanded");
+    setTimeout(() => {
+      longText.style.display = "none";
+      shortText.style.display = "block";
+    }, 500); // Match the duration of the transition
+  } else {
+    shortText.style.display = "none";
+    longText.style.display = "block";
+    setTimeout(() => {
+      longText.classList.add("expanded");
+    }, 10); // Slight delay to trigger transition
+  }
+}
 // Function to detect the device and redirect accordingly
 function detectDevice() {
   // Check if the screen width is less than or equal to 768 pixels

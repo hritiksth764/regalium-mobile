@@ -6,100 +6,136 @@ body {
 
 .header {
   display: flex;
-  justify-content: center; /* Center the brand name */
+  justify-content: space-between;
   align-items: center;
-  position: fixed; /* Fixed position */
-  width: 100%; /* Full width */
-  top: 0; /* Align to top */
-  left: 0; /* Align to left */
-  padding: 10px 20px; /* Padding around content */
-  background-color: transparent; /* Semi-transparent background */
-  color: #fff;
-  z-index: 101;
-  height: 25px; /* Ensure it's above the hero section */
+  max-width: 390px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: #0a1017;
+  backdrop-filter: blur(6px);
 }
 
 .menu-icon {
-  position: absolute; /* Absolute positioning relative to header */
-  top: 27px; /* Top padding */
-  left: 10px; /* Left padding */
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  z-index: 102; /* Above the header content */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-.bar {
-  height: 3px;
-  width: 100%;
-  background-color: #fff;
-  transition: all 0.3s ease;
+.logo {
+  position: absolute;
+
+  left: 140px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.brand-name {
-  padding-top: 20px;
-  position: relative; /* Relative to its normal position */
-  font-size: 26px;
-  height: 24px;
-  white-space: nowrap; /* Prevents wrapping and ensures accurate centering */
-}
+/* overlay */
 
 .overlay {
   display: none;
   position: fixed;
-  width: 296px; /* Full width overlay */
-  height: 100%; /* Full height overlay */
   top: 0;
   left: 0;
+  width: 296px;
+  height: 812px;
   background-color: white;
 
-  z-index: 100;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 24px;
+  transition: all 0.3s ease;
 }
 
-.menu {
-  position: fixed;
-  top: 50px;
-  width: 250px;
-  background: white;
-  padding: 15px;
-  border-radius: 5px;
-  left: 10px;
-  z-index: 103; /* Above the overlay and header */
-}
-
-.menu-category {
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
-.menu-item {
+.overlay.active {
   display: block;
-  margin-bottom: 10px;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu-content .menu-icon {
+  align-self: flex-start;
+  margin-left: -8px;
+}
+
+.menu-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.menu-content .regalium {
+  color: #000;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 32px !important;
+}
+
+.menu-content .provenance {
+  color: #000;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 32px !important;
+}
+
+.menu-content ul li {
+  margin: 24px 0;
+}
+
+.menu-content ul li a {
   text-decoration: none;
-  color: black;
+  color: #000;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.menu-icon.toggle .bar:nth-child(1),
-.menu-icon.toggle .bar:nth-child(2) {
-  background-color: black; /* Black bars for visibility */
+.separator {
+  width: 270px;
+  height: 1px;
+  background-color: #000;
+  border: none;
+  margin: 40px 0; /* Adjust margin as needed */
+}
+/* dropdown provenance */
+.dropdown-content {
+  display: none;
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 10px;
 }
 
-.menu-icon.toggle .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+.dropdown-content li {
+  margin: 10px 0;
 }
 
-.menu-icon.toggle .bar:nth-child(2) {
-  transform: rotate(-45deg) translate(7px, -8px);
+.dropdown-content.show {
+  display: block;
 }
 
 .hero-section {
   position: relative; /* Position relative to allow correct z-index stacking */
   height: 100vh;
   width: 100%;
-  background-image: url("images/image copy 6.png");
+  background-image: url("image copy 11.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -119,11 +155,12 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   background: linear-gradient(
     169deg,
-    rgba(255, 255, 255, 0.12) 2.81%,
-    rgba(166, 12, 113, 0.12) 91.66%
+    rgba(85, 85, 85, 0.2) 2.81%,
+    rgba(74, 6, 51, 0.2) 91.66%
   );
+
   box-shadow: 0px 4px 7.3px 0px rgba(0, 0, 0, 0.16);
-  backdrop-filter: blur(5.449999809265137px);
+  backdrop-filter: blur(8.5px);
   /* No need for opacity and pointer-events since it should be always visible */
   z-index: 10;
   padding: 10px;
@@ -333,6 +370,7 @@ body.fade-in .unlock-box {
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
   margin-top: 24px; /* Adjust as needed */
 }
+
 .slider2 {
   max-width: 390px;
   display: flex;
@@ -402,6 +440,59 @@ body.fade-in .unlock-box {
     0,
     0.5
   ); /* Semi-transparent background for better readability */
+  transition: all 0.3s ease;
+}
+
+.short-text {
+  display: block;
+}
+.long-text {
+  display: none;
+  transition: max-height 2s ease, opacity 2s ease;
+}
+.short-text h2 {
+  color: #fff;
+
+  font-family: Merriweather;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.short-text p {
+  color: #fff;
+
+  font-family: "Work Sans";
+  font-size: 12px !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 19.2px */
+  text-transform: none;
+}
+.long-text p {
+  color: #fff;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  text-transform: none;
+}
+
+.learn-more,
+.see-less {
+  color: #fff;
+  font-family: "Work Sans", sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 160%; /* 19.2px */
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Optional: Hide scrollbar */
@@ -725,12 +816,10 @@ html {
 }
 
 .content-subtitle {
-  font-size: 16px;
-  font-family: "Merriweather", serif;
   margin: 0;
   color: #f0f0f0;
   color: #fff;
-
+  width: 239px;
   text-align: center;
   font-family: Merriweather;
   font-size: 16px;
