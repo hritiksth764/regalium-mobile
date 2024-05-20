@@ -203,7 +203,7 @@ body {
 }
 .slider {
   position: relative;
-  width: 390px;
+  max-width: 390px;
   height: 477px;
   overflow-x: hidden;
   margin-left: 16px;
