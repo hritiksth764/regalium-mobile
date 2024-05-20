@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 390px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  background-color: #fff;
+}
+
+.menu-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo {
+  position: absolute;
+
+  left: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* overlay */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 296px;
+  height: 812px;
+  background-color: white;
+
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu-content .menu-icon {
+  align-self: flex-start;
+  margin-left: -8px;
+}
+
+.menu-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.menu-content .regalium {
+  color: #000;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 32px !important;
+}
+
+.menu-content .provenance {
+  color: #000;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 32px !important;
+}
+
+.menu-content ul li {
+  margin: 24px 0;
+}
+
+.menu-content ul li a {
+  text-decoration: none;
+  color: #000;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.separator {
+  width: 270px;
+  height: 1px;
+  background-color: #000;
+  border: none;
+  margin: 40px 0; /* Adjust margin as needed */
+}
+/* dropdown provenance */
+.dropdown-content {
+  display: none;
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.dropdown-content li {
+  margin: 10px 0;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.content-container {
+  animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  overflow-x: hidden;
+  max-width: 390px;
+
+  margin-left: 16px;
+  margin-right: 16px;
+  max-width: 1200px;
+}
+
+.container h3 {
+  color: #a6a171;
+
+  font-family: "Meie Script";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.container h2 {
+  color: #a6a171;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.container h1 {
+  color: #0f0f0f;
+  margin: 0 !important;
+  font-family: Merriweather;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 170%; /* 54.4px */
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.container p {
+  color: #000;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 19.2px */
+  margin-top: 12px !important;
+  margin-bottom: 32px !important;
+}
+.slider {
+  position: relative;
+  width: 390px;
+  height: 477px;
+  overflow-x: hidden;
+  margin-left: 16px;
+}
+
+.slide {
+  position: absolute;
+  width: 280px;
+  height: 477px;
+  padding-right: 10px;
+  transition: transform 1s ease-in-out;
+}
+
+.slide img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 16px;
+  padding-top: 40px !important; /* Add padding to ensure left margin of 16px */
+
+  color: white;
+  box-sizing: border-box;
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+
+  color: white;
+}
+
+.slide-content h2 {
+  color: #fff;
+
+  font-family: Merriweather;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.slide-content h3 {
+  font-family: "Merriweather", serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+.slide-content p {
+  color: #fff;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 19.2px */
+}
