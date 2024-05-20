@@ -15,6 +15,9 @@ body {
   padding-bottom: 24px;
   background: #0a1017;
   backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .menu-icon {
