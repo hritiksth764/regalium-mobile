@@ -149,7 +149,7 @@ body {
 }
 
 .container {
-  max-width: 390px;
+  max-width: auto;
 
   margin-left: 16px;
   margin-right: 16px;
