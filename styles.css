@@ -424,7 +424,128 @@ body.fade-in .unlock-box {
   position: relative;
   display: flex;
   align-items: flex-end;
-  margin-left: 010px; /* Aligns text to the bottom */
+  margin-left: 010px;
+  /* Aligns text to the bottom */
+}
+
+.slider-container .image-slider img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.slider-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 357px;
+  height: 582px;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slider-popup.active {
+  display: flex;
+}
+
+.slider-content {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slider-item {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.image-section {
+  width: 100%;
+  height: 200px;
+
+  flex-shrink: 0;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.text-content {
+  height: auto;
+  margin: 16px;
+  text-align: left;
+  margin-left: 16px;
+  overflow-y: hidden;
+}
+.text-content h2 {
+  color: #a6a171;
+  margin: 0;
+
+  font-family: Merriweather;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 22.4px */
+}
+
+.text-content .text-content p {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #0f0f0f;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%; /* 20.4px */
+}
+
+button.prev,
+button.next,
+button.close {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 2em;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+}
+
+button.prev {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button.next {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button.close {
+  top: 10px;
+  right: 10px;
+  transform: none;
+  font-size: 1.5em;
+  color: white;
 }
 
 .image-text {
@@ -566,8 +687,7 @@ p {
 }
 
 .image-slider img {
-  width: 132px; /* Adjust based on your specific aspect ratio needs */
-  height: auto; /* Adjust height as per your design */
+  width: 132px !important; /* Adjust height as per your design */
   display: inline-block;
 }
 

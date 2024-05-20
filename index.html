@@ -175,9 +175,8 @@
               supports vertical gardens, not only improving air quality but also
               creating a calming ambiance. Complementing this, the integration
               of public art and installations further enriches the area's
-              artistic vibrancy.
+              artistic vibrancy.<span class="learn-more">learn more</span>
             </p>
-            <span class="see-less">See less</span>
           </div>
         </div>
       </div>
@@ -188,8 +187,11 @@
         <div class="image-text" onclick="toggleText(this)">
           <div class="short-text">
             <h2>THE BUILDING</h2>
-            <p>The Regalium building is designed with...</p>
-            <span class="learn-more">learn more</span>
+            <p>
+              The Regalium building is designed with...<span class="learn-more"
+                >learn more</span
+              >
+            </p>
           </div>
           <div class="long-text">
             <h2>THE BUILDING</h2>
@@ -199,9 +201,8 @@
               supports vertical gardens, not only improving air quality but also
               creating a calming ambiance. Complementing this, the integration
               of public art and installations further enriches the area's
-              artistic vibrancy.
+              artistic vibrancy.<span class="learn-more">learn more</span>
             </p>
-            <span class="see-less">See less</span>
           </div>
         </div>
       </div>
@@ -212,8 +213,11 @@
         <div class="image-text" onclick="toggleText(this)">
           <div class="short-text">
             <h2>THE BUILDING</h2>
-            <p>The Regalium building is designed with...</p>
-            <span class="learn-more">learn more</span>
+            <p>
+              The Regalium building is designed with...<span class="learn-more"
+                >learn more</span
+              >
+            </p>
           </div>
           <div class="long-text">
             <h2>THE BUILDING</h2>
@@ -223,9 +227,8 @@
               supports vertical gardens, not only improving air quality but also
               creating a calming ambiance. Complementing this, the integration
               of public art and installations further enriches the area's
-              artistic vibrancy.
+              artistic vibrancy.<span class="learn-more">learn more</span>
             </p>
-            <span class="see-less">See less</span>
           </div>
         </div>
       </div>
@@ -245,11 +248,81 @@
       </div>
       <div class="slider-container">
         <div class="image-slider">
-          <img src="image copy 6.png" alt="Image 1" />
-          <img src="image copy 6.png" alt="Image 2" />
-          <img src="image copy 6.png" alt="Image 3" />
+          <img
+            src="image copy 6.png"
+            alt="Image 1"
+            onclick="openSliderCard(0)"
+          />
+          <img
+            src="image copy 12.png"
+            alt="Image 2"
+            onclick="openSliderCard(1)"
+          />
+          <img
+            src="image copy 6.png"
+            alt="Image 3"
+            onclick="openSliderCard(2)"
+          />
         </div>
       </div>
+    </div>
+    <div class="slider-popup" id="slider-popup">
+      <div class="slider-content">
+        <div class="slider-item">
+          <div class="image-section">
+            <img src="image copy 5.png" alt="Image 1" />
+          </div>
+          <div class="text-content">
+            <h2>The Regal Gallery</h2>
+            <p>
+              The Regal Gallery invites visitors as they arrive at Regalium.
+              This double-storied, naturally lit space is airy, grand, and
+              dynamic—it is designed to host events, exhibitions, shows, and
+              more. The Gallery is designed to ensure the highest level of
+              audio-visual experience: it has flexible, soundproof walls, a
+              discrete sound system built into the space, and Smart Glass for
+              private, exclusive events. It is also enabled with innovative
+              technology to facilitate immersive experiences. Art galleries can
+              also access several futuristic features including a
+              temperature-controlled vault and blockchain integration for
+              artwork provenance. We envision the Regal Gallery to host shows
+              that include immersive experiences, tangible NFTs,
+              AR/holographic/VR theater, and historical site exploration.
+            </p>
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="image-section">
+            <img src="image copy 12.png" alt="Image 2" />
+          </div>
+          <div class="text-content">
+            <h2>The Regal Boulevard</h2>
+            <p>
+              Running along Regalium's South facade on the ground level, the
+              Regal Boulevard is a dynamic outdoor space and our flagship venue.
+              With lush greenery and modular seating options, the Boulevard is
+              where users can enjoy an extension of Regalium's luxury interiors
+              as well as access evolving pop-ups and activities. The Regal
+              Boulevard's luxurious plug-and-play capabilities—for hosting
+              events like live performances, exhibitions, product launches,
+              conferences, and film productions—is a welcome addition to the
+              city of Bengaluru, where such venues are scarce.
+            </p>
+          </div>
+        </div>
+        <!-- <div class="slider-item">
+          <div class="image-section">
+            <img src="image_copy_6.png" alt="Image 3" />
+          </div>
+          <div class="text-content">
+            <h2>More Content</h2>
+            <p>Further description for the third image...</p>
+          </div>
+        </div> -->
+      </div>
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+      <button class="close" onclick="closeSliderCard()">&#10006;</button>
     </div>
 
     <div class="container">
@@ -387,5 +460,44 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+      let currentIndex = 0;
+      const sliderPopup = document.getElementById("slider-popup");
+      const sliderItems = document.querySelectorAll(".slider-item");
+
+      function openSliderCard(index) {
+        currentIndex = index;
+        sliderPopup.classList.add("active");
+        updateSlider();
+      }
+
+      function closeSliderCard() {
+        sliderPopup.classList.remove("active");
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % sliderItems.length;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        currentIndex =
+          (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+        updateSlider();
+      }
+
+      function updateSlider() {
+        const offset = -currentIndex * 100;
+        sliderItems.forEach((item) => {
+          item.style.transform = `translateX(${offset}%)`;
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".image-slider img").forEach((img, index) => {
+          img.addEventListener("click", () => openSliderCard(index));
+        });
+      });
+    </script>
   </body>
 </html>
