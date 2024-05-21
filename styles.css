@@ -355,7 +355,7 @@ body.fade-in .unlock-box {
   /* Other styling properties for the paragraph box */
 }
 
-.section.white-background h3 {
+.section.white-background h3 a {
   margin-top: 4px;
   margin-bottom: 32px;
   color: #5e6795;

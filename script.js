@@ -81,6 +81,14 @@ function toggleProvenance() {
   provenanceMenu.style.display =
     provenanceMenu.style.display === "block" ? "none" : "block";
 }
+
+function scrollToSectionAndCloseOverlay(sectionId, overlayId) {
+  // Scroll to the section
+  document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+
+  // Close the overlay
+  document.getElementById(overlayId).classList.remove("active");
+}
 // Track the last scroll position
 let scrollDetected = false;
 

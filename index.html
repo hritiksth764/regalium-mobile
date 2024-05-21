@@ -43,7 +43,7 @@
         </svg>
       </div>
     </header>
-    <div class="overlay">
+    <div id="overlay" class="overlay">
       <div class="menu-content">
         <div class="menu-icon" onclick="toggleMenu()">
           <svg
@@ -59,8 +59,20 @@
         </div>
         <ul>
           <li><a href="#" class="regalium">Regalium</a></li>
-          <li><a href="#">Story</a></li>
-          <li><a href="#">Blueprints</a></li>
+          <li>
+            <a
+              href="javascript:void(0);"
+              onclick="scrollToSectionAndCloseOverlay('theLocation', 'overlay')"
+              >Story</a
+            >
+          </li>
+          <li>
+            <a
+              href="javascript:void(0);"
+              onclick="scrollToSectionAndCloseOverlay('blueprintsSection', 'overlay')"
+              >Blueprints</a
+            >
+          </li>
           <li>
             <a class="menu-item" href="experiences.html" id="experiences-link"
               >Experience</a
@@ -99,7 +111,7 @@
         </p>
       </div>
     </div>
-    <div class="section theLocation">
+    <div id="theLocation" class="section theLocation">
       <div class="image-container">
         <img src="image copy.png" alt="Image Description" />
       </div>
@@ -118,7 +130,7 @@
         </div>
       </div>
     </div>
-    <div class="section white-background">
+    <div id="blueprintsSection" class="section white-background">
       <h2 class="blueprints-heading">Blueprints</h2>
       <h2 class="planned-innovation-heading">PLANNED WITH INNOVATION</h2>
       <h2 class="blueprints-heading2">
