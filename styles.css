@@ -230,11 +230,13 @@ body.fade-in .unlock-box {
 .section.theLocation {
   display: flex;
   flex-direction: column;
-  background-color: #f5f1f6;
+  background: #f5f1f6;
 }
 
 .section.theLocation .image-container {
   padding: 30px;
+  padding-bottom: 40px;
+  padding-top: 56px;
   width: 327px;
   height: 191px;
   /* Add any additional styling here */
@@ -247,8 +249,8 @@ body.fade-in .unlock-box {
 }
 
 .section.theLocation .text-container {
-  margin-top: 10px;
-  padding: 30px;
+  margin: 16px;
+  padding: 20px;
   padding-top: 0px;
   width: 295px;
   height: auto;
@@ -263,20 +265,23 @@ body.fade-in .unlock-box {
   line-height: normal;
   letter-spacing: 2.4px;
   text-transform: uppercase;
-  margin-bottom: 24px;
-  padding-left: 16px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .section.theLocation .paragraph-box {
-  padding-left: 16px;
-  width: 100%;
+  width: 295px;
   height: auto;
+  font-family: "Work Sans";
   color: #000;
   font-family: "Work Sans";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%;
+  line-height: 160%; /* 19.2px */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
 }
 .section.white-background {
   background-color: #fff; /* White background */
@@ -350,6 +355,18 @@ body.fade-in .unlock-box {
   /* Other styling properties for the paragraph box */
 }
 
+.section.white-background h3 {
+  margin-top: 4px;
+  margin-bottom: 32px;
+  color: #5e6795;
+  margin-left: 16px;
+  font-family: "Work Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%; /* 22.4px */
+}
+
 .image-gallery1 {
   /* Horizontal image grid styling */
   /* You can use flexbox or CSS grid to create the image grid */
@@ -371,7 +388,7 @@ body.fade-in .unlock-box {
   display: flex;
   overflow-x: hidden; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
-  margin-top: 24px; /* Adjust as needed */
+  /* Adjust as needed */
 }
 
 .slider2 {
@@ -379,21 +396,22 @@ body.fade-in .unlock-box {
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
-  margin-top: 4px; /* Adjust as needed */
+  /* Adjust as needed */
 }
 
 .slider1 img {
   width: 175px; /* Width for images in the first slider */
-  height: 128px;
-  padding: 5px; /* Height for images in the first slider */
+  height: auto;
+  padding-right: 4px;
+  padding-bottom: 4px; /* Height for images in the first slider */
 
-  object-fit: contain; /* Adjust spacing between images */
+  object-fit: cover; /* Adjust spacing between images */
 }
 
 .slider2 img {
   width: 315px; /* Width for images in the first slider */
-  height: 180px;
-  padding: 5px; /* Height for images in the first slider */
+  height: auto;
+  padding-right: 4px; /* Height for images in the first slider */
 
   object-fit: contain; /* Adjust spacing between images */
 }
