@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Header</title>
+    <link rel="stylesheet" href="provenance.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Work+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="menu-icon" onclick="toggleMenu()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+        >
+          <rect x="6" y="12" width="20" height="2" fill="black" />
+          <rect x="6" y="18" width="20" height="2" fill="black" />
+        </svg>
+      </div>
+      <div class="logo">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="148"
+          height="13"
+          viewBox="0 0 148 13"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_2146_16)">
+            <path
+              d="M9.99287 2.06393C10.3768 2.4906 10.5901 3.0506 10.6328 3.74393C10.6755 4.4266 10.5261 4.98126 10.1848 5.40793C9.8542 5.7706 9.1822 6.28793 8.16887 6.95993C7.50753 7.36526 6.7022 7.5946 5.75287 7.64793H2.40887V11.9999H0.984863V0.799928H6.36087C7.20353 0.799928 7.91287 0.895928 8.48887 1.08793C9.06487 1.26926 9.5662 1.5946 9.99287 2.06393ZM8.84087 6.30393C9.35287 5.6106 9.43287 4.8266 9.08087 3.95193C8.73953 3.07726 8.07287 2.46926 7.08087 2.12793C6.60087 1.95726 6.08353 1.86126 5.52887 1.83993H2.40887V6.63993H6.58487C7.52353 6.63993 8.27553 6.52793 8.84087 6.30393ZM24.2329 11.9999H21.9129L17.9769 7.64793H15.3369V11.9999H13.9129V0.799928H19.2889C20.1316 0.799928 20.8409 0.895928 21.4169 1.08793C21.9929 1.26926 22.4943 1.5946 22.9209 2.06393C23.3049 2.4906 23.5183 3.0506 23.5609 3.74393C23.6036 4.4266 23.4543 4.98126 23.1129 5.40793C22.7823 5.7706 22.1103 6.28793 21.0969 6.95993C20.7449 7.1626 20.4196 7.31193 20.1209 7.40793L24.2329 11.9999ZM15.3369 1.83993V6.63993H19.5129C20.4516 6.63993 21.2036 6.52793 21.7689 6.30393C22.2809 5.6106 22.3609 4.8266 22.0089 3.95193C21.6676 3.07726 21.0009 2.46926 20.0089 2.12793C19.5289 1.95726 19.0116 1.86126 18.4569 1.83993H15.3369ZM42.4108 4.51193C42.7095 5.31193 42.6668 6.17593 42.2828 7.10393C41.9095 8.02126 41.3175 8.85326 40.5068 9.59993C39.6962 10.3359 38.7042 10.9546 37.5308 11.4559C36.3575 11.9466 35.1788 12.1919 33.9948 12.1919C32.2135 12.1919 30.6561 11.7812 29.3228 10.9599C27.9895 10.1279 27.1681 9.09326 26.8588 7.85593C26.5601 6.63993 26.8908 5.42393 27.8508 4.20793C28.8215 2.98126 30.0908 2.03193 31.6588 1.35993C32.9815 0.762595 34.4321 0.506595 36.0108 0.591928C37.5361 0.687928 38.8855 1.0986 40.0588 1.82393C41.2322 2.5386 42.0162 3.4346 42.4108 4.51193ZM41.1788 7.27993C41.2642 6.21326 40.9548 5.22126 40.2508 4.30393C39.5468 3.37593 38.5655 2.67726 37.3068 2.20793C36.0695 1.74926 34.7788 1.55726 33.4348 1.63193C32.0908 1.7066 30.8481 2.0426 29.7068 2.63993C29.0348 3.2906 28.5868 4.00526 28.3628 4.78393C28.1388 5.55193 28.1548 6.32526 28.4108 7.10393C28.8055 8.28793 29.6481 9.2586 30.9388 10.0159C32.2401 10.7732 33.7335 11.1519 35.4188 11.1519C36.9868 11.1519 38.4162 10.8159 39.7068 10.1439V10.1279C40.5922 9.29593 41.0828 8.3466 41.1788 7.27993ZM50.5378 11.9999L44.9858 0.799928H46.9058L52.2178 11.4879L57.5298 0.799928H58.4418L52.8898 11.9999H50.5378ZM62.8869 10.9919H71.3509V11.9999H61.4629V0.799928H71.3509V1.82393H62.8869V5.88793H69.5589V6.91193H62.8869V10.9919ZM76.4088 2.39993V11.9999H74.9848V0.799928H77.3688L83.9128 9.15193V0.799928H85.3208V11.9999H83.9128L76.4088 2.39993ZM89.5743 11.9999H88.6623L94.2143 0.799928L96.4543 0.607929L102.118 11.9999H100.198L98.9823 9.58393H90.7903L89.5743 11.9999ZM91.3023 8.55993H98.4863L94.8863 1.31193L91.3023 8.55993ZM106.718 2.39993V11.9999H105.294V0.799928H107.678L114.222 9.15193V0.799928H115.63V11.9999H114.222L106.718 2.39993ZM134.048 9.08793C133.302 9.72793 132.715 10.2026 132.288 10.5119C131.872 10.8212 131.36 11.1306 130.752 11.4399C130.144 11.7492 129.51 11.9572 128.848 12.0639C128.198 12.1706 127.419 12.2186 126.512 12.2079C125.307 12.1972 124.182 11.9732 123.136 11.5359C122.091 11.0879 121.248 10.4959 120.608 9.75993C119.67 8.70393 119.307 7.55193 119.52 6.30393C119.744 5.04526 120.502 3.95726 121.792 3.03993C122.752 2.3146 123.558 1.7866 124.208 1.45593C124.87 1.1146 125.686 0.869262 126.656 0.719928C128 0.506595 129.307 0.570595 130.576 0.911929C131.856 1.2426 132.928 1.8026 133.792 2.59193L132.336 3.61593C131.504 2.87993 130.518 2.3466 129.376 2.01593C128.235 1.6746 127.04 1.5626 125.792 1.67993C124.555 1.79726 123.43 2.12793 122.416 2.67193C121.52 3.52526 121.024 4.47993 120.928 5.53593C120.832 6.59193 121.142 7.58393 121.856 8.51193C122.571 9.42926 123.595 10.1332 124.928 10.6239C126.006 11.0292 127.28 11.2159 128.752 11.1839C130.235 11.1519 131.414 10.8799 132.288 10.3679C132.299 10.3679 132.358 10.3252 132.464 10.2399C132.582 10.1439 132.72 10.0319 132.88 9.90393C133.051 9.77593 133.19 9.6746 133.296 9.59993L134.048 9.08793ZM139.184 10.9919H147.648V11.9999H137.76V0.799928H147.648V1.82393H139.184V5.88793H145.856V6.91193H139.184V10.9919Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_2146_16">
+              <rect width="148" height="13" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </header>
+    <div class="overlay">
+      <div class="menu-content">
+        <div class="menu-icon" onclick="toggleMenu()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <rect x="6" y="12" width="20" height="2" fill="black" />
+            <rect x="6" y="18" width="20" height="2" fill="black" />
+          </svg>
+        </div>
+        <ul>
+          <li><a href="#" class="regalium">Regalium</a></li>
+          <li><a href="#">Story</a></li>
+          <li><a href="#">Blueprints</a></li>
+          <li>
+            <a class="menu-item" href="experiences.html" id="experiences-link"
+              >Experience</a
+            >
+          </li>
+          <li><a href="#">Epicurean</a></li>
+          <li>
+            <a class="menu-item" href="merits.html" id="merits-link">Merit</a>
+          </li>
+          <hr class="separator" />
+          <li class="dropdown">
+            <a href="#" class="provenance" onclick="toggleDropdown(event)"
+              >Provenance</a
+            >
+            <ul class="dropdown-content">
+              <li><a href="#">Story</a></li>
+              <li><a href="#">Blueprints</a></li>
+              <li><a href="#">Experience</a></li>
+              <li><a href="#">Epicurean</a></li>
+              <li><a href="#">Merits</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero-section">
+      <div class="unlock-box">
+        <h2>INTRODUCING</h2>
+        <h1>PROVENANCE</h1>
+        <p>
+          Provenance is a future forward, sacred space that ignites communities
+          to do and be more. Here, within this boundless realm, a sanctuary
+          blossoms - a haven of sustainability, where human essence and
+          technological innovation intertwine and nurture collaboration that is
+          curated for trailblazers and visionaries.
+        </p>
+      </div>
+    </div>
+    <div class="section theLocation">
+      <div class="image-container">
+        <img src="image copy.png" alt="Image Description" />
+      </div>
+      <div class="text-container">
+        <h2 class="location-heading">THE LOCATION</h2>
+        <div class="paragraph-box">
+          <p>
+            There are several reasons why Machani Group decided to choose
+            Koramangala, Bengaluru as their innovation hub. One of them is to
+            pay homage to its ancestors who were far ahead of their time, and
+            built things that have lasted for generations. Machani's vision to
+            create something in the heart of the city, stems from the need to
+            address a growing gap between people, physical spaces, and culture.
+            Strategically Koramangala is also known as the billionaire's street
+            of India, making it the right T.A.G for Regalium.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="section white-background">
+      <h2 class="blueprints-heading">Blueprints</h2>
+      <h2 class="planned-innovation-heading">PLANNED WITH INNOVATION</h2>
+      <h2 class="blueprints-heading2">
+        BUILT FOR THE FUTURE GENERATIONS OF <br />MAVERICKS
+      </h2>
+
+      <div class="paragraph-box2">
+        <p>
+          Built for the future generations of mavericks, Regalium by Machani
+          Group is ushering in a new era of Luxury Retail, Unique Experiences,
+          and Community Building. All purely driven by innovation to achieve
+          higher efficiency, without losing sight of sustainable personal and
+          communal growth.
+        </p>
+      </div>
+      <h3>View all blueprints</h3>
+      <div class="image-gallery">
+        <div class="slider1">
+          <!-- First horizontal image slider -->
+          <img src="blueprints/image.png" alt="Image 1" />
+          <img src="blueprints/image copy.png" alt="Image 2" />
+          <img src="blueprints/image copy 2.png" alt="Image 2" />
+          <img src="image copy.png" alt="Image 2" />
+          <!-- Add more images as needed -->
+        </div>
+        <div class="slider2">
+          <!-- Second horizontal image slider -->
+          <img src="blueprints/OverviewMain.png" alt="Image 3" />
+          <img src="blueprints/image.png" alt="Image 4" />
+          <img src="blueprints/image copy.png" alt="Image 4" />
+          <img src="blueprints/image.png" alt="Image 4" />
+          <!-- Add more images as needed -->
+        </div>
+      </div>
+    </div>
+    <div class="image-slider">
+      <div class="slide" style="background-image: url('image copy 2.png')">
+        <div class="image-text" onclick="toggleText(this)">
+          <div class="short-text">
+            <h2>THE BUILDING</h2>
+            <p>
+              The Regalium building is designed with...<span class="learn-more"
+                >learn more</span
+              >
+            </p>
+          </div>
+          <div class="long-text">
+            <h2>THE BUILDING</h2>
+            <p>
+              Our facade stands out with its distinctive textures and patterns,
+              adding depth and character to the building's exterior. This design
+              supports vertical gardens, not only improving air quality but also
+              creating a calming ambiance. Complementing this, the integration
+              of public art and installations further enriches the area's
+              artistic vibrancy.<span class="learn-more">learn more</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('images/image copy 4.png')"
+      >
+        <div class="image-text" onclick="toggleText(this)">
+          <div class="short-text">
+            <h2>THE BUILDING</h2>
+            <p>
+              The Regalium building is designed with...<span class="learn-more"
+                >learn more</span
+              >
+            </p>
+          </div>
+          <div class="long-text">
+            <h2>THE BUILDING</h2>
+            <p>
+              Our facade stands out with its distinctive textures and patterns,
+              adding depth and character to the building's exterior. This design
+              supports vertical gardens, not only improving air quality but also
+              creating a calming ambiance. Complementing this, the integration
+              of public art and installations further enriches the area's
+              artistic vibrancy.<span class="learn-more">learn more</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('images/image copy 5.png')"
+      >
+        <div class="image-text" onclick="toggleText(this)">
+          <div class="short-text">
+            <h2>THE BUILDING</h2>
+            <p>
+              The Regalium building is designed with...<span class="learn-more"
+                >learn more</span
+              >
+            </p>
+          </div>
+          <div class="long-text">
+            <h2>THE BUILDING</h2>
+            <p>
+              Our facade stands out with its distinctive textures and patterns,
+              adding depth and character to the building's exterior. This design
+              supports vertical gardens, not only improving air quality but also
+              creating a calming ambiance. Complementing this, the integration
+              of public art and installations further enriches the area's
+              artistic vibrancy.<span class="learn-more">learn more</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>DESIGNED FOR INNOVATION</h2>
+      <h1>COMMUNITY,<br />COLLABORATION & AUTHENTICITY</h1>
+      <p>
+        The concept of remote and hybrid work is fully integrated into our
+        office environment. Individuals have the flexibility to work from
+        anywhere on the campus, in designated common areas on every floor, as
+        well private rooms.
+      </p>
+      <div class="image-container">
+        <img src="provevnance/image copy.png" alt="The Regal Gallery" />
+      </div>
+      <div class="slider-container">
+        <div class="image-slider">
+          <img
+            src="provevnance/image copy 2.png"
+            alt="Image 1"
+            onclick="openSliderCard(0)"
+          />
+          <img
+            src="provevnance/image copy 3.png"
+            alt="Image 2"
+            onclick="openSliderCard(1)"
+          />
+          <img
+            src="image copy 6.png"
+            alt="Image 3"
+            onclick="openSliderCard(2)"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="slider-popup" id="slider-popup">
+      <div class="slider-content">
+        <div class="slider-item">
+          <div class="image-section">
+            <img src="image copy 5.png" alt="Image 1" />
+          </div>
+          <div class="text-content">
+            <h2>The Regal Gallery</h2>
+            <p>
+              The Regal Gallery invites visitors as they arrive at Regalium.
+              This double-storied, naturally lit space is airy, grand, and
+              dynamic—it is designed to host events, exhibitions, shows, and
+              more. The Gallery is designed to ensure the highest level of
+              audio-visual experience: it has flexible, soundproof walls, a
+              discrete sound system built into the space, and Smart Glass for
+              private, exclusive events. It is also enabled with innovative
+              technology to facilitate immersive experiences. Art galleries can
+              also access several futuristic features including a
+              temperature-controlled vault and blockchain integration for
+              artwork provenance. We envision the Regal Gallery to host shows
+              that include immersive experiences, tangible NFTs,
+              AR/holographic/VR theater, and historical site exploration.
+            </p>
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="image-section">
+            <img src="image copy 12.png" alt="Image 2" />
+          </div>
+          <div class="text-content">
+            <h2>The Regal Boulevard</h2>
+            <p>
+              Running along Regalium's South facade on the ground level, the
+              Regal Boulevard is a dynamic outdoor space and our flagship venue.
+              With lush greenery and modular seating options, the Boulevard is
+              where users can enjoy an extension of Regalium's luxury interiors
+              as well as access evolving pop-ups and activities. The Regal
+              Boulevard's luxurious plug-and-play capabilities—for hosting
+              events like live performances, exhibitions, product launches,
+              conferences, and film productions—is a welcome addition to the
+              city of Bengaluru, where such venues are scarce.
+            </p>
+          </div>
+        </div>
+        <!-- <div class="slider-item">
+          <div class="image-section">
+            <img src="image_copy_6.png" alt="Image 3" />
+          </div>
+          <div class="text-content">
+            <h2>More Content</h2>
+            <p>Further description for the third image...</p>
+          </div>
+        </div> -->
+      </div>
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+      <button class="close" onclick="closeSliderCard()">&#10006;</button>
+    </div>
+
+    <div class="container">
+      <h2>DESIGNED FOR INNOVATION</h2>
+      <h1>
+        THE SEVEN<br />
+        TENETS OF COMMUNITY, COLLABORATIOn,​& AUTHENTICITY
+      </h1>
+      <p>
+        Drawing upon evocative analogies, each floor at the Provenance
+        transports occupants into realms of extraordinary experiences, elevating
+        the notion of luxury to unparalleled heights.Each tenet, each floor,
+        speaks to a unique target group, focused towards enhancing efficiency
+        and effectiveness while at work.
+      </p>
+      <!-- <div class="image-container">
+        <img src="image copy 5.png" alt="The Regal Gallery" />
+      </div> -->
+      <!-- <div class="slider-container">
+        <div class="image-slider">
+          <img src="image copy 6.png" alt="Image 1" />
+          <img src="image copy 6.png" alt="Image 2" />
+          <img src="image copy 6.png" alt="Image 3" />
+        </div>
+      </div> -->
+
+      <div class="card">
+        <img
+          src="image copy 7.png"
+          alt="Image Description"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3>Exclusive Access</h3>
+          <p>
+            With exclusive access for the luxury retail audience, Regalium
+            ensures an intimate and bespoke shopping journey, free from the
+            usual hustle and tailored to the discerning few.
+          </p>
+        </div>
+      </div>
+
+      <div class="card2">
+        <img
+          src="image copy 7.png"
+          alt="Image Description"
+          class="card-image"
+        />
+        <div class="card-content">
+          <h3>THE REGAL ARCHIVES</h3>
+          <p>
+            The Regal Archives showcase limited edition prints of the world's
+            best books, available both physically and digitally. Beyond this
+            hybrid functionality—members can access the entire collection online
+            as well, to continue their browsing even after they've left
+            Regalium—the Regal Archives serve as a serene sanctum to read,
+            reflect, and relax
+          </p>
+        </div>
+      </div>
+      <div
+        class="experience-box"
+        onclick="smoothTransition('experiences.html')"
+      >
+        <a href="experiences.html" class="experience-link"
+          >View All Experiences</a
+        >
+      </div>
+      <div class="container2">
+        <h1>THE EPICUREAN BY REGALIUM</h1>
+        <p>
+          Bengaluru's most innovative, luxurious, and curated dining experiences
+          can be found at Epicurean. By bringing together leading chefs and
+          brands with Regalium's signature technology and personalization,
+          dining at Regalium is an experience like no other.
+          <br />
+          <br />
+          This vision is a modern, immersive experience at the forefront of the
+          culinary arts today—think molecular gastronomy, seasonal and locally
+          sourced produce, and curated menus. We also use technology to blur the
+          lines between art, gastronomy, and innovation.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="new-section">
+        <div class="content">
+          <h2>KEY FEATURES</h2>
+          <ul>
+            <li>
+              Luxurious<br />
+              Distinction
+            </li>
+            <li>
+              Innovative<br />
+              Excellence
+            </li>
+            <li>Community And Culture Advocate</li>
+            <li>Sustainability <br />And Ethical <br />Integrity</li>
+          </ul>
+        </div>
+        <div class="image-container">
+          <img src="image copy 9.png" alt="Image Description" />
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="rectangle-block">
+        <img
+          src="provenance1.png"
+          alt="Image Placeholder"
+          class="rectangle-image"
+        />
+      </div>
+      <div class="content-container">
+        <div class="content-background">
+          <h1 class="content-title">PROVENANCE</h1>
+          <p class="content-subtitle">A SANCTUARY OF <br />COLLABORATION</p>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="top-footer">
+          <a href="/provenance.html" class="explore-button">Explore</a>
+        </div>
+        <div class="bottom-footer">
+          <div class="address">
+            <h1>ADDRESS</h1>
+            <p>A/52 5th Cross Road,<br />Koramangala, Bengaluru</p>
+          </div>
+          <div class="contact">
+            <h1>CONNECT WITH US</h1>
+            <p>info@regaliummachanigroup.com</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      let currentIndex = 0;
+      const sliderPopup = document.getElementById("slider-popup");
+      const sliderItems = document.querySelectorAll(".slider-item");
+
+      function openSliderCard(index) {
+        currentIndex = index;
+        sliderPopup.classList.add("active");
+        updateSlider();
+      }
+
+      function closeSliderCard() {
+        sliderPopup.classList.remove("active");
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % sliderItems.length;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        currentIndex =
+          (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+        updateSlider();
+      }
+
+      function updateSlider() {
+        const offset = -currentIndex * 100;
+        sliderItems.forEach((item) => {
+          item.style.transform = `translateX(${offset}%)`;
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".image-slider img").forEach((img, index) => {
+          img.addEventListener("click", () => openSliderCard(index));
+        });
+      });
+    </script>
+  </body>
+</html>

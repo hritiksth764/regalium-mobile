@@ -29,8 +29,7 @@ body {
 
 .logo {
   position: absolute;
-
-  left: 143.5px;
+  right: 121px;
 
   display: flex;
   justify-content: center;
@@ -138,7 +137,7 @@ body {
   position: relative; /* Position relative to allow correct z-index stacking */
   height: 100vh;
   width: 100%;
-  background-image: url("image copy 11.png");
+  background-image: url("provevnance/image.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
