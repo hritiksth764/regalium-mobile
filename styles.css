@@ -13,7 +13,7 @@ body {
   padding-right: 16px;
   padding-top: 24px;
   padding-bottom: 24px;
-  background: #0a1017;
+  background: rgba(15, 15, 15, 0.2);
   backdrop-filter: blur(6px);
   position: sticky;
   top: 0;
@@ -328,7 +328,7 @@ body.fade-in .unlock-box {
   color: #000;
   margin-bottom: 24px;
   text-transform: uppercase;
-  color: #a6a171;
+  color: #848484;
 
   font-family: "Work Sans";
   font-size: 12px;
@@ -442,7 +442,8 @@ body.fade-in .unlock-box {
   position: relative;
   display: flex;
   align-items: flex-end;
-  margin-left: 010px;
+  margin-left: 016px;
+  margin-bottom: 100px;
   /* Aligns text to the bottom */
 }
 
@@ -654,8 +655,8 @@ button.close {
 }
 
 .container h2 {
-  margin-top: 40px;
   color: #a6a171;
+  margin-bottom: 12px !important;
 
   font-family: "Work Sans";
   font-size: 12px;
@@ -665,6 +666,7 @@ button.close {
   letter-spacing: 1.1px;
   text-transform: uppercase;
 }
+
 h1 {
   font-size: 24px;
   color: #333;
@@ -677,13 +679,14 @@ h1 {
   line-height: 170%; /* 54.4px */
   letter-spacing: 3.2px;
   text-transform: uppercase;
-  margin-top: -20px;
+  margin: 0 !important;
 }
 
 p {
   color: #666;
   text-align: left;
-  margin-bottom: 20px;
+  margin-top: 24px;
+  margin-bottom: 32px;
   color: #000;
 
   font-family: "Work Sans";
