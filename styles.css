@@ -489,11 +489,6 @@ body.fade-in .unlock-box {
   transform: translateY(-50%);
 }
 
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
 .slider:nth-child(2) img {
   width: 315px; /* Width for images in the second slider */
   height: 180px; /* Height for images in the second slider */
