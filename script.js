@@ -123,6 +123,33 @@ function toggleText(element) {
     }, 10); // Slight delay to trigger transition
   }
 }
+
+var currentImageIndex;
+var images = [
+  "blueprints/OverviewMain.png",
+  "blueprints/image.png",
+  "blueprints/image copy.png",
+  "blueprints/image.png",
+  // Add more image sources as needed
+];
+
+function openModal(src, index) {
+  currentImageIndex = index;
+  var modal = document.getElementById("imageModal");
+  var modalImg = document.getElementById("modalImage");
+  modal.style.display = "flex";
+  modalImg.src = src;
+}
+
+function closeModal() {
+  var modal = document.getElementById("imageModal");
+  modal.style.display = "none";
+}
+
+function changeImage(n) {
+  currentImageIndex = (currentImageIndex + n + images.length) % images.length;
+  document.getElementById("modalImage").src = images[currentImageIndex];
+}
 // Function to detect the device and redirect accordingly
 function detectDevice() {
   // Check if the screen width is less than or equal to 768 pixels

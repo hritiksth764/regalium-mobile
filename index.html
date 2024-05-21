@@ -166,11 +166,35 @@
         </div>
         <div class="slider2">
           <!-- Second horizontal image slider -->
-          <img src="blueprints/OverviewMain.png" alt="Image 3" />
-          <img src="blueprints/image.png" alt="Image 4" />
-          <img src="blueprints/image copy.png" alt="Image 4" />
-          <img src="blueprints/image.png" alt="Image 4" />
+          <img
+            src="blueprints/OverviewMain.png"
+            alt="Image 3"
+            onclick="openModal(this.src, 0)"
+          />
+          <img
+            src="blueprints/image.png"
+            alt="Image 4"
+            onclick="openModal(this.src, 1)"
+          />
+          <img
+            src="blueprints/image copy.png"
+            alt="Image 4"
+            onclick="openModal(this.src, 2)"
+          />
+          <img
+            src="blueprints/image.png"
+            alt="Image 4"
+            onclick="openModal(this.src, 3)"
+          />
           <!-- Add more images as needed -->
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="imageModal" class="modal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <img class="modal-content" id="modalImage" />
+          <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+          <a class="next" onclick="changeImage(1)">&#10095;</a>
         </div>
       </div>
     </div>
