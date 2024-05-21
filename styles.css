@@ -438,7 +438,7 @@ body.fade-in .unlock-box {
 .modal-content {
   max-width: 100%;
   max-height: 100%;
-  transform: rotate(90deg); /* Rotate to landscape orientation */
+  /* Rotate to landscape orientation */
   object-fit: contain;
 }
 
