@@ -137,6 +137,86 @@ body {
   animation: slideIn 1s forwards;
 }
 
+.container {
+}
+
+.title {
+  text-align: left;
+  margin-top: 46px;
+  color: #000;
+
+  font-family: Merriweather;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-left: 16px;
+}
+
+.heading {
+  font-size: 18px;
+  text-align: left;
+  color: #a6a171;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 16px;
+}
+
+.image-container {
+  width: 100%;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  text-align: left;
+  margin-top: 46px;
+  color: #000;
+
+  font-family: Merriweather;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-left: 16px;
+}
+
+.subheading {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: left;
+  color: #a6a171;
+
+  font-family: "Work Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 16px;
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(100%);
@@ -146,132 +226,4 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-.container {
-  overflow-x: hidden;
-  max-width: 390px;
-
-  margin-left: 16px;
-  margin-right: 16px;
-  max-width: 1200px;
-}
-
-.container h2 {
-  color: #a6a171;
-  margin-bottom: 12px !important;
-  font-family: "Work Sans";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-}
-
-.container h1 {
-  color: #0f0f0f;
-  margin: 0 !important;
-  font-family: Merriweather;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 170%; /* 54.4px */
-  letter-spacing: 3.2px;
-  text-transform: uppercase;
-}
-
-.container p {
-  color: #000;
-
-  font-family: "Work Sans";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%; /* 19.2px */
-  margin-top: 12px !important;
-  margin-bottom: 32px !important;
-}
-
-.card {
-  border-radius: 4px;
-  width: auto;
-  height: 536px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-.card-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 15px;
-  text-align: left;
-  flex: 1;
-  border-radius: 4px;
-  background: #e0e0e8;
-}
-
-.card-content h3 {
-  color: #1d1d1d;
-
-  font-family: Merriweather;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.card-content p {
-  color: #1d1d1d;
-
-  font-family: "Work Sans";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%; /* 19.2px */
-}
-
-/* adjusted height for card2 */
-.card2 {
-  border-radius: 4px;
-  width: auto;
-  height: 532px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-.card3 {
-  border-radius: 4px;
-  width: auto;
-  height: 669px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
-.card2 .card-content p {
-  color: #1d1d1d;
-
-  font-family: "Work Sans";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 160%; /* 19.2px */
 }
