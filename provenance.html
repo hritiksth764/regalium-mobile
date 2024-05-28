@@ -43,7 +43,7 @@
         </svg>
       </div>
     </header>
-    <div class="overlay">
+    <div id="overlay2" class="overlay">
       <div class="menu-content">
         <div class="menu-icon" onclick="toggleMenu()">
           <svg
@@ -58,29 +58,55 @@
           </svg>
         </div>
         <ul>
-          <li><a href="#" class="regalium">Regalium</a></li>
-          <li><a href="#">Story</a></li>
-          <li><a href="#">Blueprints</a></li>
-          <li>
-            <a class="menu-item" href="experiences.html" id="experiences-link"
-              >Experience</a
+          <li class="dropdown">
+            <a href="#" class="provenance" onclick="toggleDropdown(event)"
+              >Regalium</a
             >
-          </li>
-          <li><a href="#">Epicurean</a></li>
-          <li>
-            <a class="menu-item" href="merits.html" id="merits-link">Merit</a>
+            <ul class="dropdown-content">
+              <li>
+                <a href="index.html#theLocation">Story</a>
+              </li>
+              <li><a href="#">Blueprints</a></li>
+              <li><a href="#">Experience</a></li>
+              <li><a href="#">Epicurean</a></li>
+              <li><a href="provenanceMerits.html">Merits</a></li>
+            </ul>
           </li>
           <hr class="separator" />
           <li class="dropdown">
             <a href="#" class="provenance" onclick="toggleDropdown(event)"
               >Provenance</a
             >
-            <ul class="dropdown-content">
-              <li><a href="#">Story</a></li>
-              <li><a href="#">Blueprints</a></li>
-              <li><a href="#">Experience</a></li>
-              <li><a href="#">Epicurean</a></li>
-              <li><a href="#">Merits</a></li>
+            <ul class="dropdown-content show">
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  onclick="scrollToSectionAndCloseOverlay('provenancetheLocation', 'overlay2')"
+                  >Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  onclick="scrollToSectionAndCloseOverlay('provenanceBlueprints', 'overlay2')"
+                  >Blueprints</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  onclick="scrollToSectionAndCloseOverlay('provenanceExperience', 'overlay2')"
+                  >Experience</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0);"
+                  onclick="scrollToSectionAndCloseOverlay('provenanceEpicurean', 'overlay2')"
+                  >Epicurean</a
+                >
+              </li>
+              <li><a href="provenanceMerits.html">Merits</a></li>
             </ul>
           </li>
         </ul>
@@ -99,7 +125,7 @@
         </p>
       </div>
     </div>
-    <div class="section theLocation">
+    <div id="provenancetheLocation" class="section theLocation">
       <div class="image-container">
         <img src="image copy.png" alt="Image Description" />
       </div>
@@ -119,7 +145,7 @@
         </div>
       </div>
     </div>
-    <div class="section white-background">
+    <div id="provenanceBlueprints" class="section white-background">
       <h2 class="blueprints-heading">Blueprints</h2>
       <h2 class="planned-innovation-heading">PLANNED WITH INNOVATION</h2>
       <h2 class="blueprints-heading2">
@@ -324,7 +350,7 @@
       <button class="close" onclick="closeSliderCard()">&#10006;</button>
     </div>
 
-    <div class="container">
+    <div id="provenanceExperience" class="container">
       <h2>DESIGNED FOR INNOVATION</h2>
       <h1>
         THE SEVEN<br />
@@ -392,7 +418,7 @@
           >View All Experiences</a
         >
       </div>
-      <div class="container2">
+      <div id="provenanceEpicurean" class="container2">
         <h1>THE EPICUREAN BY REGALIUM</h1>
         <p>
           Bengaluru's most innovative, luxurious, and curated dining experiences
@@ -462,7 +488,7 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="provenanceScript.js"></script>
     <script>
       let currentIndex = 0;
       const sliderPopup = document.getElementById("slider-popup");

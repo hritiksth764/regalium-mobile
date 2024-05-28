@@ -7,9 +7,15 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Work+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="provenanceBlueprints.css" />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Meie+Script&family=Merriweather:wght@300;400;700&family=Work+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <link rel="stylesheet" href="provenanceMerits.css" />
     <title>Regalium</title>
   </head>
+  <body>
     <header class="header">
       <div class="menu-icon" onclick="toggleMenu()">
         <svg
@@ -108,43 +114,136 @@
       </div>
     </div>
     <div class="content-container">
-    <div class="container">
-      <div class="title">OVERVIEW</div>
-      <div class="heading">Triple height gallery, Retail, F&B, Office</div>
-      <div class="image-container">
-        <img src="overviewPage/image.png" alt="Project Overview" />
-      </div>
-      <div class="subtitle">BASEMENT 1</div>
-      <div class="subheading">Retail + Parking</div>
-      <div class="image-container">
-        <img src="overviewPage/image copy.png" alt="Basement Overview" />
-      </div>
-      <div class="subtitle">FIRST FLOOR</div>
-      <div class="subheading">Retail + Boulevard</div>
-      <div class="image-container">
-        <img src="overviewPage/image copy 2.png" alt="Basement Overview" />
-      </div>
-      <div class="subtitle">EIGHTH FLOOR</div>
-      <div class="subheading">Hospitality + F&B</div>
-      <div class="image-container">
-        <img src="overviewPage/image copy.png" alt="Basement Overview" />
-      </div>
-      <div class="subtitle">NINTH FLOOR</div>
-      <div class="subheading">Hospitality + F&B</div>
-      <div class="image-container">
-        <img src="overviewPage/image copy.png" alt="Basement Overview" />
+      <div class="container">
+        <h3>Merits</h3>
+        <h2>INNOVATION , LUXURY AND COMMUNITY</h2>
+        <h1>MACHANI GROUP</h1>
+        <p>
+          Machani Group is a hundred-year-old family business. We are passionate
+          advocates for the preservation of personal and cultural heritage above
+          all else—it is what defines how future generations will live and grow.
+          With Regalium, the Machani Group is looking to the future for
+          inspiration, backed by decades of expertise in creating community
+          spaces in Bengaluru. When it comes to betting on Indian innovation as
+          a global benchmark, Machani has explored tech solutions for the future
+          through emotive robotics, intelligent logistics, and precision
+          monitoring. Regalium and Provenance are more than just architectural
+          marvels: they represent how the confluence of Innovation, Luxury, and
+          Community can shape a brighter, more interconnected future.
+        </p>
+        <!-- <div class="image-container">
+        <img src="image copy 5.png" alt="The Regal Gallery" />
+      </div> -->
+        <!-- <div class="slider-container">
+        <div class="image-slider">
+          <img src="image copy 6.png" alt="Image 1" />
+          <img src="image copy 6.png" alt="Image 2" />
+          <img src="image copy 6.png" alt="Image 3" />
+        </div>
+      </div> -->
       </div>
     </div>
-  </div>
-  <script>
-    function toggleMenu() {
-      document.querySelector(".overlay").classList.toggle("active");
-    }
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const dropdown = event.target.nextElementSibling;
-      dropdown.classList.toggle("show");
-    }
-  </script>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="meritsImages/image.png" alt="Slide 1" />
+          <div class="slide-content">
+            <h2>LUXURY</h2>
+            <h3>THE ESSENCE OF EXCLUSIVITY AND ELEGANCE</h3>
+            <p>
+              Every element of Regalium and Provenance is steeped in Luxury.
+              Regalium redefines retail and hospitality with an unmatched level
+              of sophistication, offering personalized services, curated brand
+              experiences, and an ambiance of opulence. Provenance, with its
+              magnificent architecture, bespoke office layouts, and premium
+              concierge services, elevates the work environment to a realm of
+              unparalleled luxury.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="meritsImages/image.png" alt="Slide 2" />
+          <div class="slide-content">
+            <h2>INNOVATION</h2>
+            <h3>THE PROGRESS OF PRODUCTIVITY AND CREATIVITY</h3>
+            <p>
+              Regalium is at the forefront of cutting-edge technological
+              innovation. By creating experiences and services powered by
+              futuristic tech, Regalium positions India at the forefront of a
+              new world of retail, work, and play. From AR and VR-powered
+              immersive services and revolutionary sustainable systems, Regalium
+              brings the future to the heart of Bengaluru.
+            </p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="meritsImages/image.png" alt="Slide 3" />
+          <div class="slide-content">
+            <h2>SUSTAINABILITY</h2>
+            <h3>THE FUTURE OF RESPONSIBLE LIVING</h3>
+            <p>Provenance promotes sustainable and eco-friendly practices...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleMenu() {
+        document.querySelector(".overlay").classList.toggle("active");
+      }
+      function toggleDropdown(event) {
+        event.preventDefault();
+        const dropdown = event.target.nextElementSibling;
+        dropdown.classList.toggle("show");
+      }
+      let currentIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.transform = `translateX(${(i - index) * 100}%)`;
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+      // Initialize slider
+      showSlide(currentIndex);
+      document.addEventListener("DOMContentLoaded", function () {
+        const meritsLink = document.getElementById("merits-link");
+        const experiencesLink = document.getElementById("experiences-link");
+        const overlay = document.querySelector(".overlay");
+
+        meritsLink.addEventListener("click", function (event) {
+          const currentPage = window.location.pathname.split("/").pop();
+          if (currentPage === "merits.html") {
+            event.preventDefault();
+            overlay.classList.remove("active");
+            window.location.reload();
+          }
+        });
+
+        experiencesLink.addEventListener("click", function (event) {
+          const currentPage = window.location.pathname.split("/").pop();
+          if (currentPage === "experiences.html") {
+            event.preventDefault();
+            overlay.classList.remove("active");
+            window.location.reload();
+          }
+        });
+
+        function toggleMenu() {
+          overlay.classList.toggle("active");
+        }
+
+        document
+          .querySelector(".menu-icon")
+          .addEventListener("click", toggleMenu);
+      });
+    </script>
   </body>
 </html>
