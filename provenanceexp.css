@@ -53,6 +53,9 @@ body {
 .overlay.active {
   display: block;
 }
+.overlay.show {
+  display: block;
+}
 
 .menu-content {
   display: flex;
@@ -114,7 +117,6 @@ body {
   border: none;
   margin: 40px 0; /* Adjust margin as needed */
 }
-
 /* dropdown provenance */
 .dropdown-content {
   display: none;
