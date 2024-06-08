@@ -8,13 +8,17 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 390px;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-top: 24px;
-  margin-bottom: 24px;
-
-  background-color: #fff;
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 24px;
+  padding-bottom: 7px;
+  height: 40px;
+  background: rgba(15, 15, 15, 0.2);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .menu-icon {
@@ -25,12 +29,10 @@ body {
 }
 
 .logo {
+  margin: 0 auto;
   position: absolute;
-
-  left: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* overlay */
