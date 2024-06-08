@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 390px;
+  max-width: 100%;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 24px;
@@ -515,7 +515,7 @@ body.fade-in .unlock-box {
   position: relative;
   display: flex;
   align-items: flex-end;
-  margin-left: 016px;
+  margin-left: 16px;
   margin-bottom: 100px;
   /* Aligns text to the bottom */
 }
