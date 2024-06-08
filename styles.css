@@ -234,11 +234,12 @@ body.fade-in .unlock-box {
 }
 
 .section.theLocation .image-container {
-  padding: 30px;
+  padding-right: 24px;
+  padding-left: 24px;
   padding-bottom: 40px;
   padding-top: 56px;
-  width: 327px;
-  height: 191px;
+  width: auto;
+  height: auto;
   /* Add any additional styling here */
 }
 
@@ -249,10 +250,6 @@ body.fade-in .unlock-box {
 }
 
 .section.theLocation .text-container {
-  margin: 16px;
-  padding: 20px;
-  padding-top: 0px;
-  width: 295px;
   height: auto;
 }
 
@@ -265,33 +262,37 @@ body.fade-in .unlock-box {
   line-height: normal;
   letter-spacing: 2.4px;
   text-transform: uppercase;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-bottom: 24px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .section.theLocation .paragraph-box {
-  width: 295px;
+  width: auto;
   height: auto;
-  font-family: "Work Sans";
+  align-self: stretch;
   color: #000;
+
   font-family: "Work Sans";
-  font-size: 12px;
+  font-size: 14px !important;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 0 !important;
+  opacity: 0.8;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 56px;
 }
+
 .section.white-background {
   background-color: #fff; /* White background */
-  padding-top: 40px; /* 20px gap from the previous section */
+  padding-top: 48px; /* 20px gap from the previous section */
 }
 
 .blueprints-heading {
   padding-left: 16px;
+  padding-right: 16px;
   font-family: "Work Sans";
-  font-size: 12px;
   font-weight: 400;
   color: #000;
   margin-bottom: 12px;
@@ -309,13 +310,18 @@ body.fade-in .unlock-box {
 
 .planned-innovation-heading {
   padding-left: 16px;
-  letter-spacing: 2.4px;
-  width: 343px;
-  height: 60px;
-  font-family: "Work Sans";
-  font-size: 24px;
-  font-weight: 400;
+  padding-right: 16px;
+  width: auto;
+  height: auto;
   color: #000;
+
+  font-family: Merriweather;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
   margin-top: 12px;
   margin-bottom: 12px; /* Gap before the heading */
 }
@@ -326,40 +332,33 @@ body.fade-in .unlock-box {
   font-size: 12px;
   font-weight: 400;
   color: #000;
-  margin-bottom: 24px;
+  margin-bottom: 24px !important;
   text-transform: uppercase;
   color: #848484;
-
-  font-family: "Work Sans";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.2px;
-  text-transform: uppercase; /* Gap after the heading */
+  /* Gap after the heading */
 }
 
-.paragraph-box2 {
-  align-self: stretch;
+.paragraph-box2 p {
+  color: #000;
+  font-family: "Work Sans" !important;
+  opacity: 0.8 !important;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 19.2px; /* 19.2px */
   width: auto;
-  line-height: 160%; /* 19.2px */
-  padding-left: 16px;
-  padding-right: 16px;
-  font-family: "Work Sans";
-  font-style: normal;
-  font-weight: 400;
-  width: 343px;
-  height: 114px;
-  font-size: 12px;
-  margin-bottom: 60px;
-  /* Other styling properties for the paragraph box */
+  height: auto;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
-.section.white-background h3 a {
-  margin-top: 4px;
+h3 a {
+  margin-top: 24px;
   margin-bottom: 32px;
-  color: #5e6795;
   margin-left: 16px;
+  margin-right: 16px;
+  color: #5e6795;
+  text-align: right;
   font-family: "Work Sans";
   font-size: 14px;
   font-style: normal;
@@ -384,7 +383,7 @@ body.fade-in .unlock-box {
 }
 
 .slider1 {
-  max-width: 390px;
+  max-width: 100%;
   display: flex;
   overflow-x: hidden; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
@@ -392,7 +391,7 @@ body.fade-in .unlock-box {
 }
 
 .slider2 {
-  max-width: 390px;
+  max-width: 100%;
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
@@ -722,9 +721,7 @@ button.close {
 }
 
 .container {
-  width: 90%;
-  margin: 20px auto;
-  max-width: 1200px;
+  width: 100%;
 }
 
 .container h2 {
@@ -738,9 +735,14 @@ button.close {
   line-height: normal;
   letter-spacing: 1.1px;
   text-transform: uppercase;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
-h1 {
+.container h1 {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+  width: auto;
   font-size: 24px;
   color: #333;
   color: #0f0f0f;
@@ -752,10 +754,12 @@ h1 {
   line-height: 170%; /* 54.4px */
   letter-spacing: 3.2px;
   text-transform: uppercase;
-  margin: 0 !important;
 }
 
-p {
+.container p {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+  width: 280px;
   color: #666;
   text-align: left;
   margin-top: 24px;
