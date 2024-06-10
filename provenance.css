@@ -151,7 +151,7 @@ body {
   max-width: 400px; /* Maximum width */
   height: auto; /* Height is set to auto, so it adjusts based on content */
   margin: auto; /* For additional centering */
-  padding: 2em; /* Padding inside the box */
+  /* Padding inside the box */
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   background: linear-gradient(
@@ -178,19 +178,21 @@ body {
 }
 
 .unlock-box p {
-  width: 279px;
-  height: 144px;
+  width: auto;
+  height: auto;
   color: #fff;
   font-family: "Work Sans";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  padding-left: 20px; /* 150% */
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-bottom: 76px; /* 150% */
 }
 
 .unlock-box h2 {
-  padding-top: 70px;
+  padding-top: 76px;
   padding-bottom: 8px;
   color: #fff;
   font-family: "Work Sans";
@@ -204,14 +206,15 @@ body {
 
 .unlock-box h1 {
   color: #fff;
-  font-family: "Work Sans";
-  font-size: 26px;
+
+  font-family: Merriweather;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1.2px;
+  letter-spacing: 2.4px;
   text-transform: uppercase;
-  padding-bottom: 47px;
+  margin-bottom: 47px;
 }
 
 .unlock-box {
