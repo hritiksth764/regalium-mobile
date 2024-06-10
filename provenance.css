@@ -144,7 +144,7 @@ body {
 }
 .unlock-box {
   position: absolute; /* Changed from fixed to absolute */
-  top: 60%; /* Centered vertically inside the .hero-section */
+  top: 50%; /* Centered vertically inside the .hero-section */
   left: 50%; /* Centered horizontally */
   transform: translate(-50%, -50%); /* Center the element to the exact middle */
   width: 80%; /* Adjust width as needed */
