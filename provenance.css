@@ -8,11 +8,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 390px;
+  max-width: 100%;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 24px;
   padding-bottom: 7px;
+  height: 40px;
   background: rgba(15, 15, 15, 0.2);
   backdrop-filter: blur(6px);
   position: sticky;
@@ -28,12 +29,10 @@ body {
 }
 
 .logo {
+  margin: 0 auto;
   position: absolute;
-  right: 121px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* overlay */
@@ -54,9 +53,6 @@ body {
 }
 
 .overlay.active {
-  display: block;
-}
-.overlay.show {
   display: block;
 }
 
@@ -140,7 +136,7 @@ body {
   position: relative; /* Position relative to allow correct z-index stacking */
   height: 100vh;
   width: 100%;
-  background-image: url("provevnance/image.png");
+  background-image: url("image copy 11.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -236,11 +232,12 @@ body.fade-in .unlock-box {
 }
 
 .section.theLocation .image-container {
-  padding: 30px;
+  padding-right: 24px;
+  padding-left: 24px;
   padding-bottom: 40px;
   padding-top: 56px;
-  width: 327px;
-  height: 191px;
+  width: auto;
+  height: auto;
   /* Add any additional styling here */
 }
 
@@ -251,10 +248,6 @@ body.fade-in .unlock-box {
 }
 
 .section.theLocation .text-container {
-  margin: 16px;
-  padding: 20px;
-  padding-top: 0px;
-  width: 295px;
   height: auto;
 }
 
@@ -267,33 +260,37 @@ body.fade-in .unlock-box {
   line-height: normal;
   letter-spacing: 2.4px;
   text-transform: uppercase;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin-bottom: 24px;
+  margin-left: 48px !important;
+  margin-right: 48px !important;
 }
 
 .section.theLocation .paragraph-box {
-  width: 295px;
+  width: auto;
   height: auto;
-  font-family: "Work Sans";
+  align-self: stretch;
   color: #000;
+
   font-family: "Work Sans";
-  font-size: 12px;
+  font-size: 12px !important;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 0 !important;
+  opacity: 0.8;
+  margin-left: 48px !important;
+  margin-right: 48px !important;
+  margin-bottom: 56px;
 }
+
 .section.white-background {
   background-color: #fff; /* White background */
-  padding-top: 40px; /* 20px gap from the previous section */
+  padding-top: 48px; /* 20px gap from the previous section */
 }
 
 .blueprints-heading {
   padding-left: 16px;
+  padding-right: 16px;
   font-family: "Work Sans";
-  font-size: 12px;
   font-weight: 400;
   color: #000;
   margin-bottom: 12px;
@@ -311,13 +308,18 @@ body.fade-in .unlock-box {
 
 .planned-innovation-heading {
   padding-left: 16px;
-  letter-spacing: 2.4px;
-  width: 343px;
-  height: 60px;
-  font-family: "Work Sans";
-  font-size: 24px;
-  font-weight: 400;
+  padding-right: 16px;
+  width: auto;
+  height: auto;
   color: #000;
+
+  font-family: Merriweather;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
   margin-top: 12px;
   margin-bottom: 12px; /* Gap before the heading */
 }
@@ -328,52 +330,33 @@ body.fade-in .unlock-box {
   font-size: 12px;
   font-weight: 400;
   color: #000;
-  margin-bottom: 24px;
+  margin-bottom: 24px !important;
   text-transform: uppercase;
   color: #848484;
-
-  font-family: "Work Sans";
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 1.2px;
-  text-transform: uppercase; /* Gap after the heading */
+  /* Gap after the heading */
 }
 
-.paragraph-box2 {
-  align-self: stretch;
+.paragraph-box2 p {
+  color: #000;
+  font-family: "Work Sans" !important;
+  opacity: 0.8 !important;
+  font-size: 12px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 19.2px; /* 19.2px */
   width: auto;
-  line-height: 160%; /* 19.2px */
-  padding-left: 16px;
-  padding-right: 16px;
-  font-family: "Work Sans";
-  font-style: normal;
-  font-weight: 400;
-  width: 343px;
-  height: 114px;
-  font-size: 12px;
-  margin-bottom: 60px;
-  /* Other styling properties for the paragraph box */
-}
-
-.section.white-background h3 {
-  margin-top: 4px;
-  margin-bottom: 32px;
-  color: #5e6795;
+  height: auto;
   margin-left: 16px;
-  font-family: "Work Sans";
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 160%; /* 22.4px */
+  margin-right: 16px;
 }
 
-.section.white-background h3 a {
-  margin-top: 4px;
+h3 a {
+  margin-top: 24px;
   margin-bottom: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
   color: #5e6795;
-
+  text-align: right;
   font-family: "Work Sans";
   font-size: 14px;
   font-style: normal;
@@ -398,7 +381,7 @@ body.fade-in .unlock-box {
 }
 
 .slider1 {
-  max-width: 390px;
+  max-width: 100%;
   display: flex;
   overflow-x: hidden; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
@@ -406,7 +389,7 @@ body.fade-in .unlock-box {
 }
 
 .slider2 {
-  max-width: 390px;
+  max-width: 100%;
   display: flex;
   overflow-x: auto; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
@@ -430,6 +413,79 @@ body.fade-in .unlock-box {
   object-fit: contain; /* Adjust spacing between images */
 }
 
+/* The Modal (background) */
+
+/* The Modal (background) */
+/* The Modal (background) */
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
+  max-width: 100%;
+  max-height: 100%;
+  /* Rotate to landscape orientation */
+  object-fit: contain;
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .slider:nth-child(2) img {
   width: 315px; /* Width for images in the second slider */
   height: 180px; /* Height for images in the second slider */
@@ -440,7 +496,7 @@ body.fade-in .unlock-box {
 .image-slider {
   display: flex;
   overflow-x: auto;
-  width: auto;
+  width: 100%;
   height: auto;
   position: relative;
   scroll-behavior: smooth;
@@ -449,14 +505,14 @@ body.fade-in .unlock-box {
 
 .slide {
   flex: 0 0 auto;
-  width: 280px;
-  height: 477px;
+  width: 295px;
+  height: 577px;
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
   align-items: flex-end;
-  margin-left: 016px;
+  margin-left: 16px;
   margin-bottom: 100px;
   /* Aligns text to the bottom */
 }
@@ -629,15 +685,30 @@ button.close {
   line-height: 160%; /* 19.2px */
   text-transform: none;
 }
+
 .long-text p {
+  align-self: stretch;
   color: #fff;
+  width: auto;
 
   font-family: "Work Sans";
-  font-size: 12px;
+  font-size: 12px !important;
   font-style: normal;
   font-weight: 400;
   line-height: 160%;
   text-transform: none;
+}
+
+.long-text h2 {
+  color: #fff;
+
+  font-family: Merriweather;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
 }
 
 .learn-more,
@@ -663,9 +734,7 @@ button.close {
 }
 
 .container {
-  width: 90%;
-  margin: 20px auto;
-  max-width: 1200px;
+  width: 100%;
 }
 
 .container h2 {
@@ -679,9 +748,14 @@ button.close {
   line-height: normal;
   letter-spacing: 1.1px;
   text-transform: uppercase;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
-h1 {
+.container h1 {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+  width: auto;
   font-size: 24px;
   color: #333;
   color: #0f0f0f;
@@ -693,10 +767,12 @@ h1 {
   line-height: 170%; /* 54.4px */
   letter-spacing: 3.2px;
   text-transform: uppercase;
-  margin: 0 !important;
 }
 
-p {
+.container p {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+  width: auto;
   color: #666;
   text-align: left;
   margin-top: 24px;
@@ -704,18 +780,26 @@ p {
   color: #000;
 
   font-family: "Work Sans";
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 16px; /* Margin on the left and right */
+}
+
 .image-container img {
-  width: 100%;
-  display: block; /* Remove space below the image */
+  max-width: 100%;
+  height: auto;
 }
 
 .slider-container {
+  width: 100%;
+  margin-left: 16px;
   overflow-x: auto; /* Allows horizontal scrolling */
   white-space: nowrap;
   margin-bottom: 100px; /* Keeps images in a single line */
@@ -723,15 +807,19 @@ p {
 
 .image-slider img {
   width: 132px !important; /* Adjust height as per your design */
-  display: inline-block;
+  display: flex;
 }
 
 .card {
   border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  margin: 0 16px;
   width: auto;
-  height: 530px;
+  height: auto;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -739,16 +827,15 @@ p {
 }
 
 .card-image {
-  width: 100%;
-  height: 250px;
+  width: auto;
+  height: auto;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 15px;
   text-align: left;
   flex: 1;
-  border-radius: 4px;
+
   background: #e0e0e8;
 }
 
@@ -762,6 +849,10 @@ p {
   line-height: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .card-content p {
@@ -772,15 +863,22 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 36px !important;
 }
 
 /* adjusted height for card2 */
 .card2 {
   border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  margin: 0 16px;
   width: auto;
-  height: 492px;
+  height: auto;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -798,8 +896,11 @@ p {
 }
 
 .experience-box {
-  margin-bottom: 100px;
+  margin-bottom: 100px !important;
   width: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 16px;
   padding: 8px 36px;
   display: flex;
   justify-content: center;
@@ -820,8 +921,9 @@ p {
 
 .container .new-section {
   margin-top: 32px;
+  margin-left: 16px;
   margin-bottom: 100px;
-  gap: 16px;
+
   display: flex;
   /* Negative left margin to counteract container margin */
   margin-right: -19.5px; /* Negative right margin to counteract container margin */
@@ -938,7 +1040,7 @@ html {
 .content-container {
   width: 100%;
   max-width: auto;
-  height: 425px;
+  height: 455px;
   background: url("provenance.png") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
