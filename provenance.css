@@ -136,7 +136,7 @@ body {
   position: relative; /* Position relative to allow correct z-index stacking */
   height: 100vh;
   width: 100%;
-  background-image: url("image copy 11.png");
+  background-image: url("provevnance/image.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -917,6 +917,18 @@ button.close {
   display: block; /* Makes the link fill the entire area of the div for better clickability */
   width: 100%; /* Ensures the link covers the whole width of the box */
   height: 100%; /* Ensures the link covers the full height of the box */
+}
+
+.container2 h2 {
+  color: #b6a27c;
+
+  font-family: "Work Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 170%; /* 34px */
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .container .new-section {
