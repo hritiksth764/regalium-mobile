@@ -630,9 +630,6 @@ button.close {
   position: absolute;
   background-color: transparent;
   border: none;
-
-  color: white !important;
-  opacity: 0.9 !important;
   cursor: pointer;
   user-select: none;
 }
@@ -640,16 +637,22 @@ button.close {
 button.prev {
   top: 20%;
   transform: translateY(-50%);
+  color: white !important;
+  opacity: 0.9 !important;
 }
 
 button.next {
   top: 20%;
   transform: translateY(-50%);
+  color: white !important;
+  opacity: 0.9 !important;
 }
 
 button.close {
   top: 5px !important;
   right: 10px !important;
+  color: white !important;
+  opacity: 0.9 !important;
   transform: none;
   font-size: 1em;
 }
