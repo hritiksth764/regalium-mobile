@@ -531,12 +531,12 @@ h3 a {
 .slider-popup {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 50% !important;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 357px;
-  height: auto;
-  z-index: 9999;
+  height: 650px;
+  z-index: 1000;
   justify-content: center;
   align-items: center;
 
