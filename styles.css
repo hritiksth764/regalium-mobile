@@ -539,6 +539,7 @@ h3 a {
   z-index: 1000;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   box-sizing: border-box;
 }
