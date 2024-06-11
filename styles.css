@@ -631,8 +631,8 @@ button.close {
   background-color: transparent;
   border: none;
 
-  color: white;
-  opacity: 0.9;
+  color: white !important;
+  opacity: 0.9 !important;
   cursor: pointer;
   user-select: none;
 }
@@ -648,11 +648,10 @@ button.next {
 }
 
 button.close {
-  top: 5px;
-  right: 15px;
+  top: 5px !important;
+  right: 10px !important;
   transform: none;
   font-size: 1em;
-  color: white;
 }
 
 .image-text {
