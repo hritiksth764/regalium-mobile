@@ -455,7 +455,6 @@ h3 a {
 
 .close:hover,
 .close:focus {
-  color: #bbb;
   text-decoration: none;
   cursor: pointer;
 }
@@ -655,7 +654,7 @@ button.close {
   color: white !important;
   opacity: 0.9 !important;
   transform: none;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .image-text {
