@@ -649,7 +649,7 @@ button.next {
 button.close {
   top: 10px !important;
   right: 10px !important;
-  color: black !important;
+  color: white !important;
   opacity: 0.9 !important;
   transform: none;
   font-size: 0.8em;
