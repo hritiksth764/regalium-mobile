@@ -71,6 +71,23 @@ function smoothTransition(url) {
 //   }
 // });
 
+function smoothtransition(url) {
+  // Save the scroll position
+  sessionStorage.setItem("scrollPosition", window.scrollY);
+
+  // Navigate to the new page
+  window.location.href = url;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Restore the scroll position
+  const scrollPosition = sessionStorage.getItem("scrollPosition");
+  if (scrollPosition !== null) {
+    window.scrollTo(0, parseInt(scrollPosition, 10));
+    sessionStorage.removeItem("scrollPosition");
+  }
+});
+
 function toggleMenu() {
   document.querySelector(".overlay").classList.toggle("active");
 }
