@@ -391,6 +391,14 @@ h3 a {
   /* Adjust as needed */
 }
 
+.image-slider .slide {
+  pointer-events: none;
+}
+
+.image-slider .image-text {
+  pointer-events: auto;
+}
+
 .slider2 {
   max-width: 100%;
   display: flex;

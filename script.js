@@ -1,32 +1,85 @@
 var desktopSite = "https://regalium.vercel.app";
 var mobileSite = "https://regalium-mobile.vercel.app";
 
-// Document Ready: Handle immediate DOM-dependent setups
+// Detect device and redirect accordingly
+function detectDevice() {
+  if (window.innerWidth <= 768) {
+    if (window.location.href.includes(desktopSite)) {
+      window.location.href = mobileSite;
+    }
+  } else {
+    if (window.location.href.includes(mobileSite)) {
+      window.location.href = desktopSite;
+    }
+  }
+}
 
+// Call the function when the script loads
+detectDevice();
+
+// Handle resize or device rotation
+window.addEventListener("resize", detectDevice);
+
+// Document Ready: Handle immediate DOM-dependent setups
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded and parsed");
   document.body.classList.add("fade-in");
+
+  // Restore the scroll position
+  const scrollPosition = sessionStorage.getItem("scrollPosition");
+  if (scrollPosition !== null) {
+    window.scrollTo(0, parseInt(scrollPosition, 10));
+    sessionStorage.removeItem("scrollPosition");
+  }
+
+  // Add click event listeners for slides
+  document.querySelectorAll(".slide").forEach((slide, index) => {
+    slide.addEventListener("click", () => openSliderCard(index));
+  });
+
+  // Close the popup when clicking outside the content
+  overlay.addEventListener("click", (event) => {
+    if (!event.target.closest(".slider-content")) {
+      closeSliderCard();
+    }
+  });
 });
 
-// Full Page Load: Adjust actions that depend on all resources being loaded
-// window.addEventListener("load", function () {
-//   console.log("All resources finished loading");
+let currentIndex = 0;
+const sliderPopup = document.getElementById("slider-popup");
+const sliderItems = document.querySelectorAll(".slider-item");
+const overlay = document.getElementById("overlaypopup");
 
-//   // Set navigating flag when navigating to experience.html
-//   var linksToExperience = document.querySelectorAll(".experience-link");
-//   linksToExperience.forEach((link) => {
-//     link.addEventListener("click", () => {
-//       localStorage.setItem("navigatingToExperience", "true");
-//     });
-//   });
+function openSliderCard(index) {
+  currentIndex = index;
+  sliderPopup.classList.add("active");
+  overlay.classList.add("active");
+  document.body.classList.add("slider-active");
+  updateSlider();
+}
 
-//   // Only reset to top if not coming back from an experience navigation
-//   if (!localStorage.getItem("navigatingToExperience")) {
-//     setTimeout(() => {
-//       window.scrollTo(0, 0);
-//     }, 100);
-//   }
-// });
+function closeSliderCard() {
+  sliderPopup.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.classList.remove("slider-active");
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % sliderItems.length;
+  updateSlider();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+  updateSlider();
+}
+
+function updateSlider() {
+  const offset = -currentIndex * 100;
+  sliderItems.forEach((item) => {
+    item.style.transform = `translateX(${offset}%)`;
+  });
+}
 
 // Assuming smoothTransition is used for navigating away
 function smoothTransition(url) {
@@ -49,48 +102,15 @@ function smoothTransition(url) {
   }, 1000); // Duration should match the transition duration
 }
 
-// Page Show: Used for restoring scroll position correctly when coming back from another page
-// window.addEventListener("pageshow", function (event) {
-//   console.log("Page show event triggered:", event.persisted);
-//   document.body.style.opacity = "1";
-
-//   // Add a mobile-specific condition to check event.persisted to handle caching issues
-//   if (localStorage.getItem("navigatingToExperience") && event.persisted) {
-//     const savedPosition = parseInt(
-//       localStorage.getItem("scrollPosition") || 0,
-//       10
-//     );
-//     console.log("Restoring scroll position to:", savedPosition);
-
-//     setTimeout(() => {
-//       window.scrollTo(0, savedPosition);
-//       console.log("Scroll restoration complete on mobile.");
-//       localStorage.removeItem("scrollPosition");
-//       localStorage.removeItem("navigatingToExperience");
-//     }, 300); // Increased timeout for mobile
-//   }
-// });
-
 function smoothtransition(url) {
-  // Save the scroll position
   sessionStorage.setItem("scrollPosition", window.scrollY);
-
-  // Navigate to the new page
   window.location.href = url;
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Restore the scroll position
-  const scrollPosition = sessionStorage.getItem("scrollPosition");
-  if (scrollPosition !== null) {
-    window.scrollTo(0, parseInt(scrollPosition, 10));
-    sessionStorage.removeItem("scrollPosition");
-  }
-});
 
 function toggleMenu() {
   document.querySelector(".overlay").classList.toggle("active");
 }
+
 function toggleDropdown(event) {
   event.preventDefault();
   const dropdown = event.target.nextElementSibling;
@@ -104,13 +124,10 @@ function toggleProvenance() {
 }
 
 function scrollToSectionAndCloseOverlay(sectionId, overlayId) {
-  // Scroll to the section
   document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
-
-  // Close the overlay
   document.getElementById(overlayId).classList.remove("active");
 }
-// Track the last scroll position
+
 let scrollDetected = false;
 
 window.addEventListener("scroll", function () {
@@ -121,26 +138,35 @@ window.addEventListener("scroll", function () {
   }
 });
 
-function toggleText(element) {
+function toggleText(event, element) {
+  // Prevent the event from bubbling up to parent elements
+  event.stopPropagation();
+
   const imageText = element.closest(".image-text");
   const shortText = imageText.querySelector(".short-text");
   const longText = imageText.querySelector(".long-text");
-  const isExpanded = longText.classList.contains("expanded");
 
-  if (isExpanded) {
-    longText.classList.remove("expanded");
-    setTimeout(() => {
-      longText.style.display = "none";
-      shortText.style.display = "block";
-    }, 500); // Match the duration of the transition
+  if (shortText.style.display === "none") {
+    shortText.style.display = "block";
+    longText.style.display = "none";
   } else {
     shortText.style.display = "none";
     longText.style.display = "block";
-    setTimeout(() => {
-      longText.classList.add("expanded");
-    }, 10); // Slight delay to trigger transition
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".slide").forEach((slide, index) => {
+    slide.addEventListener("click", () => openSliderCard(index));
+  });
+
+  const overlay = document.getElementById("overlaypopup");
+  overlay.addEventListener("click", (event) => {
+    if (!event.target.closest(".slider-content")) {
+      closeSliderCard();
+    }
+  });
+});
 
 var currentImageIndex;
 var images = [
@@ -168,24 +194,3 @@ function changeImage(n) {
   currentImageIndex = (currentImageIndex + n + images.length) % images.length;
   document.getElementById("modalImage").src = images[currentImageIndex];
 }
-// Function to detect the device and redirect accordingly
-function detectDevice() {
-  // Check if the screen width is less than or equal to 768 pixels
-  if (window.innerWidth <= 768) {
-    // If on a desktop site and the screen is that of a mobile device, redirect to the mobile site
-    if (window.location.href.includes(desktopSite)) {
-      window.location.href = mobileSite;
-    }
-  } else {
-    // If on a mobile site and the screen is that of a desktop, redirect to the desktop site
-    if (window.location.href.includes(mobileSite)) {
-      window.location.href = desktopSite;
-    }
-  }
-}
-
-// Call the function when the script loads
-detectDevice();
-
-// Optionally, to handle cases where the user resizes the window or rotates their mobile device:
-window.addEventListener("resize", detectDevice);
