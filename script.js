@@ -46,26 +46,26 @@ function smoothTransition(url) {
 }
 
 // Page Show: Used for restoring scroll position correctly when coming back from another page
-window.addEventListener("pageshow", function (event) {
-  console.log("Page show event triggered:", event.persisted);
-  document.body.style.opacity = "1";
+// window.addEventListener("pageshow", function (event) {
+//   console.log("Page show event triggered:", event.persisted);
+//   document.body.style.opacity = "1";
 
-  // Add a mobile-specific condition to check event.persisted to handle caching issues
-  if (localStorage.getItem("navigatingToExperience") && event.persisted) {
-    const savedPosition = parseInt(
-      localStorage.getItem("scrollPosition") || 0,
-      10
-    );
-    console.log("Restoring scroll position to:", savedPosition);
+//   // Add a mobile-specific condition to check event.persisted to handle caching issues
+//   if (localStorage.getItem("navigatingToExperience") && event.persisted) {
+//     const savedPosition = parseInt(
+//       localStorage.getItem("scrollPosition") || 0,
+//       10
+//     );
+//     console.log("Restoring scroll position to:", savedPosition);
 
-    setTimeout(() => {
-      window.scrollTo(0, savedPosition);
-      console.log("Scroll restoration complete on mobile.");
-      localStorage.removeItem("scrollPosition");
-      localStorage.removeItem("navigatingToExperience");
-    }, 300); // Increased timeout for mobile
-  }
-});
+//     setTimeout(() => {
+//       window.scrollTo(0, savedPosition);
+//       console.log("Scroll restoration complete on mobile.");
+//       localStorage.removeItem("scrollPosition");
+//       localStorage.removeItem("navigatingToExperience");
+//     }, 300); // Increased timeout for mobile
+//   }
+// });
 
 function toggleMenu() {
   document.querySelector(".overlay").classList.toggle("active");
