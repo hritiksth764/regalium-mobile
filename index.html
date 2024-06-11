@@ -403,6 +403,7 @@
       <button class="next" onclick="nextSlide()">&#10095;</button>
       <button class="close" onclick="closeSliderCard()">&#10006;</button>
     </div> -->
+    <div class="overlaypopup" id="overlaypopup"></div>
     <div class="slider-popup" id="slider-popup">
       <div class="slider-content">
         <div class="slider-item">
@@ -628,17 +629,20 @@
       let currentIndex = 0;
       const sliderPopup = document.getElementById("slider-popup");
       const sliderItems = document.querySelectorAll(".slider-item");
+      const overlay = document.getElementById("overlaypopup");
 
       function openSliderCard(index) {
         currentIndex = index;
         sliderPopup.classList.add("active");
-        document.body.classList.add("slider-active"); // Add this line
+        overlay.classList.add("active");
+        document.body.classList.add("slider-active");
         updateSlider();
       }
 
       function closeSliderCard() {
         sliderPopup.classList.remove("active");
-        document.body.classList.remove("slider-active"); // Add this line
+        overlay.classList.remove("active");
+        document.body.classList.remove("slider-active");
       }
 
       function nextSlide() {
@@ -660,8 +664,15 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".image-slider img").forEach((img, index) => {
-          img.addEventListener("click", () => openSliderCard(index));
+        document.querySelectorAll(".slide").forEach((slide, index) => {
+          slide.addEventListener("click", () => openSliderCard(index));
+        });
+
+        // Close the popup when clicking outside the content
+        overlay.addEventListener("click", (event) => {
+          if (!event.target.closest(".slider-content")) {
+            closeSliderCard();
+          }
         });
       });
     </script>
