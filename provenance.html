@@ -259,43 +259,81 @@
       </div>
     </div>
 
-    <div class="container">
+    <div id="experienceSection" class="container">
       <h2>DESIGNED FOR INNOVATION</h2>
-      <h1>COMMUNITY,<br />COLLABORATION & AUTHENTICITY</h1>
+      <h1>Privacy, Exclusivity, & Authenticity</h1>
       <p>
-        The concept of remote and hybrid work is fully integrated into our
-        office environment. Individuals have the flexibility to work from
-        anywhere on the campus, in designated common areas on every floor, as
-        well private rooms.
+        Regalium's bold new vision for the future is highlighted in every part
+        of the building. Each space is designed to enhance and empower its users
+        with cutting-edge technological features and smart, thoughtful design
+        interventions.
       </p>
       <div class="image-container">
-        <img src="provevnance/image copy.png" alt="The Regal Gallery" />
+        <img src="image copy 5.png" alt="The Regal Gallery" />
       </div>
       <div class="slider-container">
         <div class="image-slider">
           <img
-            src="provevnance/image copy 2.png"
+            src="image copy 6.png"
             alt="Image 1"
             onclick="openSliderCard(0)"
           />
           <img
-            src="provevnance/image copy 3.png"
+            src="image copy 12.png"
             alt="Image 2"
             onclick="openSliderCard(1)"
           />
           <img
-            src="image copy 6.png"
+            src="image copy 23.png"
             alt="Image 3"
             onclick="openSliderCard(2)"
           />
         </div>
       </div>
     </div>
+
+    <div class="overlaypopup" id="overlaypopup"></div>
     <div class="slider-popup" id="slider-popup">
       <div class="slider-content">
         <div class="slider-item">
           <div class="image-section">
-            <img src="image copy 5.png" alt="Image 1" />
+            <img src="image copy 20.png" alt="Popup Image 1" />
+          </div>
+          <div class="text-content">
+            <h2>The Regal Boulevard</h2>
+            <p>
+              Regalium prioritises occupants' well-being while setting new
+              standards for business ease. Its laws foster a vibrant economy and
+              society. Guided by GRI Standards for ESG, it enhances health
+              through materiality assessments. As a sustainable architecture
+              model, it reflects Machani's dedication to ethical business and
+              community engagement. Continuous GHG monitoring and waste
+              management highlight its technology-driven sustainability.
+              Stakeholder engagement aligns with occupants' needs, bolstering
+              health, safety, and well-being. Rigorous risk management enhances
+              Regalium's resilience and sustainability commitment.
+            </p>
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="image-section">
+            <img src="image copy 22.png" alt="Popup Image 2" />
+          </div>
+          <div class="text-content">
+            <h2>The Regal Tableaus</h2>
+            <p>
+              The next wave of innovative OOH advertising displays for luxury
+              brands, enabling storytelling in the most interactive and
+              immersive way. Placed on the outer walls of the boulevard, the
+              tableau can be used by brands to display their latest campaigns,
+              advertisements. The multi purpose display can also be converted to
+              extra screens during an event.
+            </p>
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="image-section">
+            <img src="image copy 21.png" alt="Popup Image 2" />
           </div>
           <div class="text-content">
             <h2>The Regal Gallery</h2>
@@ -318,32 +356,23 @@
         </div>
         <div class="slider-item">
           <div class="image-section">
-            <img src="image copy 12.png" alt="Image 2" />
+            <img src="image copy 23.png" alt="Popup Image 2" />
           </div>
           <div class="text-content">
-            <h2>The Regal Boulevard</h2>
+            <h2>The Regal Vaults</h2>
             <p>
-              Running along Regalium's South facade on the ground level, the
-              Regal Boulevard is a dynamic outdoor space and our flagship venue.
-              With lush greenery and modular seating options, the Boulevard is
-              where users can enjoy an extension of Regalium's luxury interiors
-              as well as access evolving pop-ups and activities. The Regal
-              Boulevard's luxurious plug-and-play capabilities—for hosting
-              events like live performances, exhibitions, product launches,
-              conferences, and film productions—is a welcome addition to the
-              city of Bengaluru, where such venues are scarce.
+              Enhancing the shopping experience at Regalium, the Regal Vaults
+              are exclusive private lounges where members can try, choose, and
+              experience products from different brands. The Vaults facilitate
+              this immersive experience via personal shoppers, VR/AR
+              technologies, smart mirrors, and AI assistants. The space itself
+              can be customized per member preferences, and shoppers can browse
+              and try products from the comfort of the Vault without needing to
+              visit the physical store—making the experience hyper-personalized
+              and seamless.
             </p>
           </div>
         </div>
-        <!-- <div class="slider-item">
-          <div class="image-section">
-            <img src="image_copy_6.png" alt="Image 3" />
-          </div>
-          <div class="text-content">
-            <h2>More Content</h2>
-            <p>Further description for the third image...</p>
-          </div>
-        </div> -->
       </div>
       <button class="prev" onclick="prevSlide()">&#10094;</button>
       <button class="next" onclick="nextSlide()">&#10095;</button>
@@ -481,15 +510,20 @@
       let currentIndex = 0;
       const sliderPopup = document.getElementById("slider-popup");
       const sliderItems = document.querySelectorAll(".slider-item");
+      const overlay = document.getElementById("overlaypopup");
 
       function openSliderCard(index) {
         currentIndex = index;
         sliderPopup.classList.add("active");
+        overlay.classList.add("active");
+        document.body.classList.add("slider-active");
         updateSlider();
       }
 
       function closeSliderCard() {
         sliderPopup.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.classList.remove("slider-active");
       }
 
       function nextSlide() {
@@ -509,12 +543,6 @@
           item.style.transform = `translateX(${offset}%)`;
         });
       }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".image-slider img").forEach((img, index) => {
-          img.addEventListener("click", () => openSliderCard(index));
-        });
-      });
     </script>
   </body>
 </html>
