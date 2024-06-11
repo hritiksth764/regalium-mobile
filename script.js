@@ -1,28 +1,32 @@
+var desktopSite = "https://regalium.vercel.app";
+var mobileSite = "https://regalium-mobile.vercel.app";
+
 // Document Ready: Handle immediate DOM-dependent setups
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded and parsed");
   document.body.classList.add("fade-in");
 });
 
 // Full Page Load: Adjust actions that depend on all resources being loaded
-window.addEventListener("load", function () {
-  console.log("All resources finished loading");
+// window.addEventListener("load", function () {
+//   console.log("All resources finished loading");
 
-  // Set navigating flag when navigating to experience.html
-  var linksToExperience = document.querySelectorAll(".experience-link");
-  linksToExperience.forEach((link) => {
-    link.addEventListener("click", () => {
-      localStorage.setItem("navigatingToExperience", "true");
-    });
-  });
+//   // Set navigating flag when navigating to experience.html
+//   var linksToExperience = document.querySelectorAll(".experience-link");
+//   linksToExperience.forEach((link) => {
+//     link.addEventListener("click", () => {
+//       localStorage.setItem("navigatingToExperience", "true");
+//     });
+//   });
 
-  // Only reset to top if not coming back from an experience navigation
-  if (!localStorage.getItem("navigatingToExperience")) {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
-  }
-});
+//   // Only reset to top if not coming back from an experience navigation
+//   if (!localStorage.getItem("navigatingToExperience")) {
+//     setTimeout(() => {
+//       window.scrollTo(0, 0);
+//     }, 100);
+//   }
+// });
 
 // Assuming smoothTransition is used for navigating away
 function smoothTransition(url) {
@@ -99,9 +103,6 @@ window.addEventListener("scroll", function () {
     scrollDetected = true; // Ensure this runs only once
   }
 });
-
-var desktopSite = "https://regalium.vercel.app";
-var mobileSite = "https://regalium-mobile.vercel.app";
 
 function toggleText(element) {
   const imageText = element.closest(".image-text");
