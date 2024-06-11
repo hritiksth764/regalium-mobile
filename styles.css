@@ -555,8 +555,9 @@ h3 a {
   z-index: 9999;
   justify-content: center;
   align-items: center;
+  height: auto;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 10px !important;
 
   box-sizing: border-box;
 }
@@ -614,7 +615,7 @@ h3 a {
   line-height: 160%; /* 22.4px */
 }
 
-.text-content .text-content p {
+.text-content p {
   color: #0f0f0f;
 
   font-family: "Work Sans";
@@ -649,7 +650,7 @@ button.next {
 }
 
 button.close {
-  top: 5px !important;
+  top: 10px !important;
   right: 10px !important;
   color: white !important;
   opacity: 0.9 !important;
