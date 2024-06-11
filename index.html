@@ -185,7 +185,8 @@
           <img src="blueprints/image.png" alt="Image 1" />
           <img src="blueprints/image copy.png" alt="Image 2" />
           <img src="blueprints/image copy 2.png" alt="Image 2" />
-          <img src="image copy.png" alt="Image 2" />
+          <img src="blueprints/OverviewMain.png" alt="Image 2" />
+
           <!-- Add more images as needed -->
         </div>
         <div class="slider2">
@@ -546,11 +547,13 @@
       function openSliderCard(index) {
         currentIndex = index;
         sliderPopup.classList.add("active");
+        document.body.classList.add("slider-active"); // Add this line
         updateSlider();
       }
 
       function closeSliderCard() {
         sliderPopup.classList.remove("active");
+        document.body.classList.remove("slider-active"); // Add this line
       }
 
       function nextSlide() {
