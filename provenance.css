@@ -618,7 +618,8 @@ h3 a {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 170%; /* 20.4px */
+  line-height: 170%;
+  margin-bottom: 40px; /* 20.4px */
 }
 
 button.prev,
