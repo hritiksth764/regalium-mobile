@@ -383,7 +383,7 @@ h3 a {
 .slider1 {
   max-width: 100%;
   display: flex;
-  overflow-x: hidden; /* Enable horizontal scrolling */
+  overflow-x: auto; /* Enable horizontal scrolling */
   scroll-snap-type: x mandatory; /* Snap images to container's boundaries */
   /* Adjust as needed */
 }
