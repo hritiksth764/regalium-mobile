@@ -34,7 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add click event listeners for slides
   document.querySelectorAll(".slide").forEach((slide, index) => {
-    slide.addEventListener("click", () => openSliderCard(index));
+    slide.addEventListener("click", (event) => {
+      // Check if the click was on the "learn more" link and prevent bubbling
+      if (!event.target.closest(".learn-more")) {
+        openSliderCard(index);
+      }
+    });
   });
 
   // Close the popup when clicking outside the content
@@ -154,19 +159,6 @@ function toggleText(event, element) {
     longText.style.display = "block";
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".slide").forEach((slide, index) => {
-    slide.addEventListener("click", () => openSliderCard(index));
-  });
-
-  const overlay = document.getElementById("overlaypopup");
-  overlay.addEventListener("click", (event) => {
-    if (!event.target.closest(".slider-content")) {
-      closeSliderCard();
-    }
-  });
-});
 
 var currentImageIndex;
 var images = [
