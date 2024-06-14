@@ -1,4 +1,5 @@
 // Document Ready: Handle immediate DOM-dependent setups
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded and parsed");
   document.body.classList.add("fade-in");

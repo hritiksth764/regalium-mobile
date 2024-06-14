@@ -50,42 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-let currentIndex = 0;
-const sliderPopup = document.getElementById("slider-popup");
-const sliderItems = document.querySelectorAll(".slider-item");
-const overlay = document.getElementById("overlaypopup");
-
-function openSliderCard(index) {
-  currentIndex = index;
-  sliderPopup.classList.add("active");
-  overlay.classList.add("active");
-  document.body.classList.add("slider-active");
-  updateSlider();
-}
-
-function closeSliderCard() {
-  sliderPopup.classList.remove("active");
-  overlay.classList.remove("active");
-  document.body.classList.remove("slider-active");
-}
-
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % sliderItems.length;
-  updateSlider();
-}
-
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
-  updateSlider();
-}
-
-function updateSlider() {
-  const offset = -currentIndex * 100;
-  sliderItems.forEach((item) => {
-    item.style.transform = `translateX(${offset}%)`;
-  });
-}
-
 // Assuming smoothTransition is used for navigating away
 function smoothTransition(url) {
   const overlay = document.createElement("div");
@@ -143,20 +107,24 @@ window.addEventListener("scroll", function () {
   }
 });
 
-function toggleText(event, element) {
-  // Prevent the event from bubbling up to parent elements
-  event.stopPropagation();
-
+function toggleText(element) {
   const imageText = element.closest(".image-text");
   const shortText = imageText.querySelector(".short-text");
   const longText = imageText.querySelector(".long-text");
+  const isExpanded = longText.classList.contains("expanded");
 
-  if (shortText.style.display === "none") {
-    shortText.style.display = "block";
-    longText.style.display = "none";
+  if (isExpanded) {
+    longText.classList.remove("expanded");
+    setTimeout(() => {
+      longText.style.display = "none";
+      shortText.style.display = "block";
+    }, 500); // Match the duration of the transition
   } else {
     shortText.style.display = "none";
     longText.style.display = "block";
+    setTimeout(() => {
+      longText.classList.add("expanded");
+    }, 10); // Slight delay to trigger transition
   }
 }
 

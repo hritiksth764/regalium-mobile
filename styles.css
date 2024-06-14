@@ -503,6 +503,115 @@ h3 a {
   object-fit: contain; /* Adjust spacing between images */
 }
 
+.slider-container1 {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden; /* Add padding to show part of the next slide */
+}
+
+.slider-container1 .slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 16px !important;
+}
+
+.slider-container1 .slide {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(
+    100vw - 64px
+  ); /* Adjust width to fit mobile screens and show part of the next slide */
+  overflow: hidden; /* Ensure the expanded text stays within the slide */
+}
+
+.slider-container1 .slide.next-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+}
+
+.slider-container1 .image {
+  position: relative;
+  height: 577px;
+  background-size: cover;
+  background-position: center;
+}
+
+.slider-container1 .text-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  opacity: 0.8;
+  background: none; /* No initial background */
+}
+
+.slider-container1 .text-overlay h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.slider-container1 .text-overlay p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.slider-container1 .full-text {
+  display: none;
+}
+
+.slider-container1 .learn-more,
+.slider-container .see-less {
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffd700; /* Gold color for better visibility */
+}
+
+.slider-container1 .expanded .learn-more {
+  display: none !important;
+}
+
+.slider-container1 .expanded .see-less {
+  display: inline;
+}
+
+.slider-container1 .expanded .short-text {
+  display: none;
+}
+
+.slider-container1 .expanded .full-text {
+  display: block;
+}
+
+.slider-container1 .expanded .text-overlay {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("images/image copy 4.png") lightgray 50% / cover no-repeat;
+  max-height: 100%; /* Ensure the overlay does not exceed the slide height */
+}
+
+.slider-container1 .arrow {
+  position: absolute;
+  top: 50%;
+  right: 16px; /* Adjust for container padding */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+
 .image-slider {
   display: flex;
   overflow-x: auto;
@@ -526,7 +635,6 @@ h3 a {
   margin-bottom: 100px;
   /* Aligns text to the bottom */
 }
-
 .slider-container .image-slider img {
   width: 100%;
   height: 100%;
@@ -534,7 +642,6 @@ h3 a {
 
   margin-right: 10px;
 }
-
 .overlaypopup {
   position: fixed;
   top: 0;
