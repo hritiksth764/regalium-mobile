@@ -128,10 +128,10 @@ function toggleText(element) {
 var currentImageIndex;
 var images = [
   "blueprints/OverviewMain.png",
-  "blueprints/image.png",
-  "blueprints/image copy.png",
-  "blueprints/image.png",
-  // Add more image sources as needed
+  "blueprints/blueprin1.png",
+  "blueprints/blueprin2.png",
+  "blueprints/blueprin3.png",
+  // Add more image paths as needed
 ];
 
 function openModal(src, index) {
