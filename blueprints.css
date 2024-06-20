@@ -38,22 +38,21 @@ body {
 /* overlay */
 
 .overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 296px;
-  height: 812px;
+  height: 100vh; /* Changed to 100% to make it responsive */
   background-color: white;
-
   box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 24px;
-  transition: all 0.3s ease;
+  transform: translateX(-100%); /* Start hidden off the screen */
+  transition: transform 0.5s ease; /* Smooth transition */
 }
 
 .overlay.active {
-  display: block;
+  transform: translateX(0); /* Slide into view */
 }
 
 .menu-content {
