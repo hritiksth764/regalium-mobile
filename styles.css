@@ -1,6 +1,20 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/Avenir\ Next.ttc") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agentur";
+  src: url("fonts/FontsFree-Net-Agentur-Display.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  font-family: "Work Sans", sans-serif;
   margin: 0;
+  background: #0c0707;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -20,7 +34,6 @@ body {
   top: 0;
   z-index: 1000;
 }
-
 .menu-icon {
   display: flex;
   justify-content: center;
@@ -131,11 +144,59 @@ body {
   display: block;
 }
 
+.section.event-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.section.event-section .image-container {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section.event-section .image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.section.event-section .view-event-button {
+  position: absolute;
+  top: 50%; /* Adjust this value to position the button vertically */
+  left: 20%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border-radius: 2px;
+  background: #fff;
+  color: #202020;
+  text-transform: capitalize;
+  font-family: Avenir;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+@media (min-width: 430px) {
+  .section.event-section .view-event-button {
+    left: 18%; /* Adjust this value as needed */
+  }
+}
+
 .hero-section {
+  object-fit: cover;
   position: relative; /* Position relative to allow correct z-index stacking */
   height: 100vh;
   width: 100%;
-  background-image: url("image copy 11.png");
+  background-image: url("phase2/image.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -180,7 +241,9 @@ body {
   width: auto;
   height: auto;
   color: #fff;
-  font-family: "Work Sans";
+  color: #fff;
+
+  font-family: Avenir;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -230,16 +293,18 @@ body.fade-in .unlock-box {
 .section.theLocation {
   display: flex;
   flex-direction: column;
-  background: #f5f1f6;
+  background: #0c0707;
 }
 
 .section.theLocation .image-container {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
   padding-right: 24px;
-  padding-left: 24px;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
   padding-top: 56px;
   width: auto;
   height: auto;
+  border-radius: 0px 4px 4px 0px;
   /* Add any additional styling here */
 }
 
@@ -247,64 +312,62 @@ body.fade-in .unlock-box {
   width: 100%;
   height: auto;
   object-fit: contain;
+
+  border-radius: 0px 4px 4px 0px;
 }
 
 .section.theLocation .text-container {
+  margin-top: 100px;
   height: auto;
 }
 
 .section.theLocation .location-heading {
-  color: #000;
-  font-family: Merriweather;
+  padding-bottom: 0 !important;
+  color: #fff;
+  font-family: Agentur;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: 2.4px;
+  line-height: 150%;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  margin-bottom: 24px;
-  margin-left: 48px !important;
-  margin-right: 48px !important;
+  /* margin-bottom: 24px; */
+  margin-left: 16px !important;
+  margin-right: 24px !important;
+  margin-bottom: 0px !important;
 }
 
-.section.theLocation .paragraph-box {
-  width: auto;
-  height: auto;
+.section.theLocation .paragraph-box p {
   align-self: stretch;
-  color: #000;
-
-  font-family: "Work Sans";
-  font-size: 12px !important;
+  color: #ddd;
+  font-family: "Avenir", Arial, sans-serif;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; /* 19.2px */
+  line-height: normal;
+  letter-spacing: 2px;
   opacity: 0.8;
-  margin-left: 48px !important;
-  margin-right: 48px !important;
-  margin-bottom: 56px;
+  margin-left: 16px !important;
+  margin-right: 24px !important;
 }
 
 .section.white-background {
-  background-color: #fff; /* White background */
-  padding-top: 48px; /* 20px gap from the previous section */
+  background: #0c0707; /* White background */
+  padding-top: 100px; /* 20px gap from the previous section */
 }
 
 .blueprints-heading {
   padding-left: 16px;
   padding-right: 16px;
-  font-family: "Work Sans";
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  color: #a6a171;
+  color: #bc4121;
 
-  font-family: "Work Sans";
+  font-family: "Roboto Mono";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1.2px;
+  letter-spacing: 3.84px;
+  text-transform: uppercase;
   text-transform: uppercase; /* Gap after the heading */
 }
 
@@ -313,14 +376,15 @@ body.fade-in .unlock-box {
   padding-right: 16px;
   width: auto;
   height: auto;
-  color: #000;
+  align-self: stretch;
+  color: #fff;
 
-  font-family: Merriweather;
-  font-size: 24px;
+  font-family: Agentur;
+  font-size: 32px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  letter-spacing: 2.4px;
+  line-height: 150%; /* 48px */
+  letter-spacing: 0.64px;
   text-transform: uppercase;
   margin-top: 12px;
   margin-bottom: 12px; /* Gap before the heading */
@@ -328,24 +392,28 @@ body.fade-in .unlock-box {
 
 .blueprints-heading2 {
   padding-left: 16px;
-  font-family: "Work Sans";
-  font-size: 12px;
+  align-self: stretch;
+  color: #baaf95;
+
+  font-family: "Avenir";
+  font-size: 10px;
+  font-style: normal;
   font-weight: 400;
-  color: #000;
-  margin-bottom: 24px !important;
-  text-transform: uppercase;
-  color: #848484;
+  line-height: normal;
+  letter-spacing: 1px;
   /* Gap after the heading */
 }
 
 .paragraph-box2 p {
-  color: #000;
-  font-family: "Work Sans" !important;
-  opacity: 0.8 !important;
-  font-size: 12px !important;
+  align-self: stretch;
+  color: #dcdcdc;
+
+  font-family: "Avenir";
+  font-size: 12px;
   font-style: normal;
-  font-weight: 400 !important;
-  line-height: 19.2px; /* 19.2px */
+  font-weight: 400;
+  line-height: 180%; /* 21.6px */
+  opacity: 0.8;
   width: auto;
   height: auto;
   margin-left: 16px;
@@ -801,7 +869,7 @@ button.close {
 .short-text h2 {
   color: #fff;
 
-  font-family: Merriweather;
+  font-family: Agentur;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -813,25 +881,26 @@ button.close {
 .short-text p {
   color: #fff;
 
-  font-family: "Work Sans";
-  font-size: 12px !important;
+  font-family: "Avenir";
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
-  text-transform: none;
+  opacity: 0.8;
+  text-transform: capitalize;
 }
 
 .long-text p {
   align-self: stretch;
   color: #fff;
-  width: auto;
 
-  font-family: "Work Sans";
-  font-size: 12px !important;
+  font-family: "Avenir";
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%;
-  text-transform: none;
+  line-height: 160%; /* 19.2px */
+  opacity: 0.8;
+  text-transform: capitalize;
 }
 
 .long-text h2 {
@@ -892,15 +961,13 @@ button.close {
   margin-right: 16px !important;
   width: auto;
   font-size: 24px;
-  color: #333;
-  color: #0f0f0f;
-
-  font-family: Merriweather;
+  color: #fff;
+  font-family: Agentur;
   font-size: 32px;
   font-style: normal;
-  font-weight: 300;
-  line-height: 170%; /* 54.4px */
-  letter-spacing: 3.2px;
+  font-weight: 400;
+  line-height: 170%;
+  letter-spacing: 0.64px;
   text-transform: uppercase;
 }
 
@@ -912,13 +979,13 @@ button.close {
   text-align: left;
   margin-top: 24px;
   margin-bottom: 32px;
-  color: #000;
+  color: #dcdcdc;
 
-  font-family: "Work Sans";
+  font-family: "Avenir";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; /* 19.2px */
+  line-height: 180%; /* 21.6px */ /* 19.2px */
 }
 
 .image-container {
@@ -953,7 +1020,7 @@ button.close {
   margin: 0 16px;
   width: auto;
   height: auto;
-  background-color: #fff;
+  background: rgba(224, 224, 232, 0.1);
 
   display: flex;
   flex-direction: column;
@@ -971,18 +1038,18 @@ button.close {
   text-align: left;
   flex: 1;
 
-  background: #e0e0e8;
+  background: rgba(224, 224, 232, 0.1);
 }
 
 .card-content h3 {
-  color: #1d1d1d;
-
-  font-family: Merriweather;
+  align-self: stretch;
+  color: #ddd;
+  font-family: Agentur;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -991,13 +1058,15 @@ button.close {
 }
 
 .card-content p {
-  color: #1d1d1d;
+  align-self: stretch;
+  color: #e6e6e6;
 
-  font-family: "Work Sans";
+  font-family: "Avenir";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
+  opacity: 0.8;
   margin-left: 16px;
   margin-right: 16px;
   margin-bottom: 36px !important;
@@ -1012,7 +1081,7 @@ button.close {
   margin: 0 16px;
   width: auto;
   height: auto;
-  background-color: #fff;
+  background: rgba(224, 224, 232, 0.1);
 
   display: flex;
   flex-direction: column;
@@ -1023,11 +1092,14 @@ button.close {
 .card2 .card-content p {
   color: #1d1d1d;
 
-  font-family: "Work Sans";
+  color: #e6e6e6;
+
+  font-family: "Avenir";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
+  opacity: 0.8;
 }
 
 .experience-box {
@@ -1041,15 +1113,21 @@ button.close {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-radius: 100px;
-  border: 1px solid #000;
+  border-radius: 4px;
+  border: 1px solid #fff;
   text-align: center; /* Ensures text is centered if it wraps to a new line */
 }
 
 .experience-link {
   text-decoration: none; /* Removes underline from links */
-  color: black; /* Set the text color to black */
-  display: block; /* Makes the link fill the entire area of the div for better clickability */
+  color: #fff;
+
+  text-align: center;
+  font-family: "Avenir";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */ /* Makes the link fill the entire area of the div for better clickability */
   width: 100%; /* Ensures the link covers the whole width of the box */
   height: 100%; /* Ensures the link covers the full height of the box */
 }
@@ -1068,7 +1146,7 @@ button.close {
   flex: 1;
   padding: 16px;
 
-  background: #f7f6f2;
+  background: #756e4c;
   text-align: left;
 }
 
@@ -1078,8 +1156,10 @@ button.close {
   padding: 0; /* Override any other padding */
   color: #9d8854;
 
-  font-family: "Work Sans";
-  font-size: 1.1em;
+  color: #fff;
+
+  font-family: "Roboto Mono";
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
@@ -1110,7 +1190,9 @@ button.close {
   position: relative;
   color: #000;
   letter-spacing: 1.2px;
-  font-family: "Work Sans";
+  color: #fff9d9;
+
+  font-family: "Avenir";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -1226,9 +1308,9 @@ html {
 }
 .footer {
   width: 100%;
-  max-width: auto;
-  height: 512px;
-  background: #021712;
+
+  height: auto;
+  background: #0c0707;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Space between the top and bottom sections */
@@ -1242,7 +1324,7 @@ html {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; /* Add spacing between the top and bottom sections */
+  margin-bottom: 100px; /* Add spacing between the top and bottom sections */
 }
 
 .explore-button {
@@ -1275,6 +1357,7 @@ html {
 }
 
 .address h1 {
+  margin-top: 100px;
   color: #e6eeec;
 
   font-family: Merriweather;
@@ -1301,13 +1384,13 @@ html {
   margin: 5px 0;
   color: #e6eeec;
 
-  font-family: "Work Sans";
+  font-family: "Avenir", Arial, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.6px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 .address p {
@@ -1323,6 +1406,7 @@ html {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.6px;
+  margin-bottom: 20px;
 }
 @media (max-width: 768px) {
   .image-grid {
