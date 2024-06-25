@@ -208,8 +208,8 @@ body {
   top: 50%; /* Centered vertically inside the .hero-section */
   left: 50%; /* Centered horizontally */
   transform: translate(-50%, -50%); /* Center the element to the exact middle */
-  width: 80%; /* Adjust width as needed */
-  max-width: 400px; /* Maximum width */
+  width: 327px;
+  /* Adjust width as needed */ /* Maximum width */
   height: auto; /* Height is set to auto, so it adjusts based on content */
   margin: auto; /* For additional centering */
   /* Padding inside the box */
@@ -225,7 +225,7 @@ body {
   backdrop-filter: blur(8.5px);
   /* No need for opacity and pointer-events since it should be always visible */
   z-index: 10;
-  padding: 10px;
+
   opacity: 0; /* Initially make it invisible */
   visibility: hidden; /* Hide the box */
   transition: opacity 0.5s, visibility 2s; /* Ensure it is above the .hero-section content but below the header */
@@ -238,19 +238,30 @@ body {
   margin: 0.5em 0; /* Spacing for aesthetic */
 }
 
-.unlock-box p {
-  width: auto;
-  height: auto;
-  color: #fff;
+.unlock-box h2 {
   color: #fff;
 
+  font-family: "Avenir";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.unlock-box p {
+  /* width: 100%; */
+  height: auto;
+  color: #fff;
   font-family: Avenir;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  margin-left: 24px;
-  margin-right: 24px;
+  margin-left: 24px !important;
+  margin-right: 24px !important;
+  width: auto;
   margin-bottom: 76px; /* 150% */
 }
 
@@ -258,7 +269,8 @@ body {
   padding-top: 76px;
   padding-bottom: 8px;
   color: #fff;
-  font-family: "Work Sans";
+
+  font-family: "Avenir";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -270,7 +282,7 @@ body {
 .unlock-box h1 {
   color: #fff;
 
-  font-family: Merriweather;
+  font-family: Agentur;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
