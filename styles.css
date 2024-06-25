@@ -89,12 +89,13 @@ body {
 }
 
 .menu-content .regalium {
-  color: #000;
-  font-family: "Work Sans", sans-serif;
+  color: #f0362f;
+  font-family: "Agentur";
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
+  text-transform: capitalize;
   margin-bottom: 32px !important;
 }
 
@@ -115,7 +116,7 @@ body {
 .menu-content ul li a {
   text-decoration: none;
   color: #000;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Avenir", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
