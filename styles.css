@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   background: #0c0707;
@@ -101,11 +108,13 @@ body {
 
 .menu-content .provenance {
   color: #000;
-  font-family: "Work Sans", sans-serif;
+
+  font-family: Agentur;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
+
   margin-bottom: 32px !important;
 }
 
@@ -435,17 +444,31 @@ body.fade-in .unlock-box {
 }
 
 h3 a {
+  text-decoration: none;
   margin-top: 24px;
-  margin-bottom: 32px;
   margin-left: 16px;
   margin-right: 16px;
-  color: #5e6795;
+  color: #fff;
+
   text-align: right;
-  font-family: "Work Sans";
+  font-family: Avenir;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 160%; /* 22.4px */
+  line-height: 160%; /* .4px */
+  margin-bottom: 32px !important;
+  width: 117px;
+  display: flex;
+  justify-content: center;
+  margin: 0 16px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 2px;
+  border: 1px solid #626262;
+  text-align: center; /* Ensures text is centered if it wraps to a new line */
 }
 
 .image-gallery1 {
@@ -474,6 +497,7 @@ h3 a {
 
 .image-slider .slide {
   pointer-events: none;
+  border-radius: 2px;
 }
 
 .image-slider .image-text {
@@ -956,15 +980,16 @@ button.close {
 }
 
 .container h2 {
-  color: #a6a171;
   margin-bottom: 12px !important;
 
-  font-family: "Work Sans";
+  color: #bc4121;
+
+  font-family: "Roboto Mono";
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1.1px;
+  letter-spacing: 3.84px;
   text-transform: uppercase;
   margin-left: 16px;
   margin-right: 16px;

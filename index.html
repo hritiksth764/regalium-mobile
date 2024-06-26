@@ -78,6 +78,13 @@
           <li>
             <a
               href="javascript:void(0);"
+              onclick="scrollToSectionAndCloseOverlay('eventSection', 'overlay')"
+              >Events</a
+            >
+          </li>
+          <li>
+            <a
+              href="javascript:void(0);"
               onclick="scrollToSectionAndCloseOverlay('experienceSection', 'overlay')"
               >Experience</a
             >
@@ -146,7 +153,7 @@
       </div>
     </div>
 
-    <div class="section event-section">
+    <div id="eventSection" class="section event-section">
       <div class="image-container">
         <img src="phase2/image copy.png" alt="Event Image" />
         <a
