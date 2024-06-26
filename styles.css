@@ -70,6 +70,7 @@ body {
   padding: 24px;
   transform: translateX(-100%); /* Start hidden off the screen */
   transition: transform 0.5s ease; /* Smooth transition */
+  overflow-y: auto;
 }
 
 .overlay.active {
