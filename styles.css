@@ -63,7 +63,7 @@ body {
   top: 0;
   left: 0;
   width: 296px;
-  height: 100vh; /* Changed to 100% to make it responsive */
+  height: 100%; /* Changed to 100% to make it responsive */
   background-color: white;
   box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
