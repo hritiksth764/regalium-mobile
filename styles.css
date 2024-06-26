@@ -13,6 +13,13 @@
 }
 
 @font-face {
+  font-family: "Agentur Display";
+  src: url("fonts/FontsFree-Net-Agentur-Display.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Roboto Mono";
   src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
   font-weight: 400;
@@ -98,7 +105,7 @@ body {
 
 .menu-content .regalium {
   color: #f0362f;
-  font-family: "Agentur";
+  font-family: "Agentur Display";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -110,7 +117,7 @@ body {
 .menu-content .provenance {
   color: #000;
 
-  font-family: Agentur;
+  font-family: "Agentur Display";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
