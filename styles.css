@@ -893,15 +893,14 @@ button.close {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 2.4px;
   text-transform: uppercase;
   padding: 10px; /* Padding from the bottom and left of the image */
-  background-color: rgba(
+  /* background-color: rgba(
     0,
     0,
     0,
     0.5
-  ); /* Semi-transparent background for better readability */
+  ); Semi-transparent background for better readability */
   transition: all 0.3s ease;
 }
 
@@ -941,7 +940,7 @@ button.close {
   color: #fff;
 
   font-family: "Avenir";
-  font-size: 12px;
+  font-size: 12px !important;
   font-style: normal;
   font-weight: 400;
   line-height: 160%; /* 19.2px */
@@ -969,7 +968,7 @@ button.close {
   font-style: italic;
   font-weight: 500;
   line-height: 160%; /* 19.2px */
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -1407,7 +1406,7 @@ html {
   margin-top: 100px;
   color: #e6eeec;
 
-  font-family: Merriweather;
+  font-family: "Roboto Mono";
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -1419,7 +1418,7 @@ html {
 .contact h1 {
   color: #e6eeec;
 
-  font-family: Merriweather;
+  font-family: "Roboto Mono";
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
