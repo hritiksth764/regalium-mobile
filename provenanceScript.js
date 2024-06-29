@@ -108,10 +108,12 @@ function toggleText(element) {
   const imageText = element.closest(".image-text");
   const shortText = imageText.querySelector(".short-text");
   const longText = imageText.querySelector(".long-text");
+  const overlay = element.closest(".slide").querySelector(".overlay2");
   const isExpanded = longText.classList.contains("expanded");
 
   if (isExpanded) {
     longText.classList.remove("expanded");
+    overlay.style.opacity = 0;
     setTimeout(() => {
       longText.style.display = "none";
       shortText.style.display = "block";
@@ -121,6 +123,7 @@ function toggleText(element) {
     longText.style.display = "block";
     setTimeout(() => {
       longText.classList.add("expanded");
+      overlay.style.opacity = 1;
     }, 10); // Slight delay to trigger transition
   }
 }
