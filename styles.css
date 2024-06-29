@@ -173,14 +173,14 @@ body {
 .section.event-section .image-container {
   position: relative;
   width: 100%;
-  object-fit: cover;
+  text-align: center; /* Center align content horizontally */
 }
 
 .section.event-section .image-container img {
-  width: 100%;
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
   height: auto;
-  display: block;
-  object-fit: cover;
+  display: inline-block; /* Ensures the image respects its natural width and height */
+  vertical-align: middle; /* Align image vertically in the middle if necessary */
 }
 
 .section.event-section .view-event-button {
@@ -1034,7 +1034,7 @@ button.close {
   line-height: 180%; /* 21.6px */ /* 19.2px */
 }
 
-.image-container {
+.image-container2 {
   display: flex;
   justify-content: center;
   margin: 0 16px; /* Margin on the left and right */
