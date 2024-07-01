@@ -1,7 +1,36 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("fonts/Avenir\ Next.ttc") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agentur";
+  src: url("fonts/FontsFree-Net-Agentur-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agentur Display";
+  src: url("fonts/FontsFree-Net-Agentur-Display.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: #0c0707;
 }
 
 .header {
@@ -15,12 +44,12 @@ body {
   padding-bottom: 7px;
   height: 40px;
   background: rgba(15, 15, 15, 0.2);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(5px);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
-
 .menu-icon {
   display: flex;
   justify-content: center;
@@ -42,13 +71,14 @@ body {
   top: 0;
   left: 0;
   width: 296px;
-  height: 100vh; /* Changed to 100% to make it responsive */
+  height: 100%; /* Changed to 100% to make it responsive */
   background-color: white;
   box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 24px;
   transform: translateX(-100%); /* Start hidden off the screen */
   transition: transform 0.5s ease; /* Smooth transition */
+  overflow-y: auto;
 }
 
 .overlay.active {
@@ -75,22 +105,25 @@ body {
 }
 
 .menu-content .regalium {
-  color: #000;
-  font-family: "Work Sans", sans-serif;
+  color: #f0362f;
+  font-family: "Agentur Display";
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
+  text-transform: capitalize;
   margin-bottom: 32px !important;
 }
 
 .menu-content .provenance {
   color: #000;
-  font-family: "Work Sans", sans-serif;
+
+  font-family: "Agentur Display";
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   line-height: normal;
+
   margin-bottom: 32px !important;
 }
 
@@ -101,7 +134,7 @@ body {
 .menu-content ul li a {
   text-decoration: none;
   color: #000;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Avenir", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -111,11 +144,11 @@ body {
 .separator {
   width: 270px;
   height: 1px;
-  background-color: #000;
+  opacity: 0.3;
+  background: #a9a9a9;
   border: none;
   margin: 40px 0; /* Adjust margin as needed */
 }
-
 /* dropdown provenance */
 .dropdown-content {
   display: none;
@@ -144,14 +177,14 @@ body {
 .title {
   text-align: left;
   margin-top: 46px;
-  color: #000;
+  color: #ddd;
 
-  font-family: Merriweather;
-  font-size: 16px;
+  font-family: Agentur;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1.6px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-left: 16px;
 }
@@ -188,14 +221,14 @@ body {
   margin-top: 30px;
   text-align: left;
   margin-top: 46px;
-  color: #000;
+  color: #ddd;
 
-  font-family: Merriweather;
-  font-size: 16px;
+  font-family: Agentur;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1.6px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-left: 16px;
 }
