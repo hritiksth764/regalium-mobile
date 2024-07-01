@@ -1,4 +1,4 @@
-var desktopSite = "https://regalium.vercel.app";
+var desktopSite = "https://regalium-desktop.vercel.app";
 var mobileSite = "https://regalium-mobile.vercel.app";
 
 // Detect device and redirect accordingly
