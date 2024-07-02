@@ -238,7 +238,7 @@ body.scrolling-enabled {
   z-index: 10;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s, visibility 2s;
+  transition: opacity 1s, visibility 2s;
 }
 
 .final .unlock-box {

@@ -20,6 +20,9 @@ detectDevice();
 
 const container = document.getElementById("container");
 let startY;
+let startX;
+const swipeThreshold = 100; // Minimum distance in pixels for the swipe to be considered
+const horizontalThreshold = 50; // Maximum horizontal movement to ensure a vertical swipe
 
 function transitionToFinalState() {
   container.style.backgroundImage = "url('fonts/image.png')";
@@ -33,10 +36,16 @@ function transitionToFinalState() {
 // Event listeners for mouse events
 container.addEventListener("mousedown", (event) => {
   startY = event.clientY;
+  startX = event.clientX;
 });
 
 container.addEventListener("mouseup", (event) => {
-  if (event.clientY < startY) {
+  const endY = event.clientY;
+  const endX = event.clientX;
+  if (
+    startY - endY > swipeThreshold &&
+    Math.abs(startX - endX) < horizontalThreshold
+  ) {
     transitionToFinalState();
   }
 });
@@ -44,10 +53,16 @@ container.addEventListener("mouseup", (event) => {
 // Event listeners for touch events
 container.addEventListener("touchstart", (event) => {
   startY = event.touches[0].clientY;
+  startX = event.touches[0].clientX;
 });
 
 container.addEventListener("touchend", (event) => {
-  if (event.changedTouches[0].clientY < startY) {
+  const endY = event.changedTouches[0].clientY;
+  const endX = event.changedTouches[0].clientX;
+  if (
+    startY - endY > swipeThreshold &&
+    Math.abs(startX - endX) < horizontalThreshold
+  ) {
     transitionToFinalState();
   }
 });
