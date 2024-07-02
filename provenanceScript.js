@@ -18,6 +18,39 @@ function detectDevice() {
 // Call the function when the script loads
 detectDevice();
 
+const container = document.getElementById("container");
+let startY;
+
+function transitionToFinalState() {
+  container.style.backgroundImage = "url('fonts/image.png')";
+  container.classList.add("final");
+
+  // Enable scrolling
+  document.body.classList.remove("scrolling-disabled");
+  document.body.classList.add("scrolling-enabled");
+}
+
+// Event listeners for mouse events
+container.addEventListener("mousedown", (event) => {
+  startY = event.clientY;
+});
+
+container.addEventListener("mouseup", (event) => {
+  if (event.clientY < startY) {
+    transitionToFinalState();
+  }
+});
+
+// Event listeners for touch events
+container.addEventListener("touchstart", (event) => {
+  startY = event.touches[0].clientY;
+});
+
+container.addEventListener("touchend", (event) => {
+  if (event.changedTouches[0].clientY < startY) {
+    transitionToFinalState();
+  }
+});
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded and parsed");
   document.body.classList.add("fade-in");
