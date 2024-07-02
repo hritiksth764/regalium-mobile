@@ -20,9 +20,6 @@ detectDevice();
 
 const container = document.getElementById("container");
 let startY;
-let startX;
-const swipeThreshold = 100; // Minimum distance in pixels for the swipe to be considered
-const horizontalThreshold = 50; // Maximum horizontal movement to ensure a vertical swipe
 
 function transitionToFinalState() {
   container.style.backgroundImage = "url('fonts/image.png')";
@@ -31,21 +28,20 @@ function transitionToFinalState() {
   // Enable scrolling
   document.body.classList.remove("scrolling-disabled");
   document.body.classList.add("scrolling-enabled");
+
+  // Show the unlock box smoothly
+  const unlockBox = document.querySelector(".unlock-box");
+  unlockBox.style.opacity = "1";
+  unlockBox.style.visibility = "visible";
 }
 
 // Event listeners for mouse events
 container.addEventListener("mousedown", (event) => {
   startY = event.clientY;
-  startX = event.clientX;
 });
 
 container.addEventListener("mouseup", (event) => {
-  const endY = event.clientY;
-  const endX = event.clientX;
-  if (
-    startY - endY > swipeThreshold &&
-    Math.abs(startX - endX) < horizontalThreshold
-  ) {
+  if (startY > event.clientY) {
     transitionToFinalState();
   }
 });
@@ -53,16 +49,10 @@ container.addEventListener("mouseup", (event) => {
 // Event listeners for touch events
 container.addEventListener("touchstart", (event) => {
   startY = event.touches[0].clientY;
-  startX = event.touches[0].clientX;
 });
 
 container.addEventListener("touchend", (event) => {
-  const endY = event.changedTouches[0].clientY;
-  const endX = event.changedTouches[0].clientX;
-  if (
-    startY - endY > swipeThreshold &&
-    Math.abs(startX - endX) < horizontalThreshold
-  ) {
+  if (startY > event.changedTouches[0].clientY) {
     transitionToFinalState();
   }
 });
