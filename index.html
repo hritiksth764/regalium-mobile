@@ -15,6 +15,31 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Work+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     /> -->
+
+    <script>
+      var desktopSite = "https://regalium-desktop.vercel.app"; // desktop version
+      var mobileSite = "https://regalium-mobile.vercel.app"; // mobile version
+
+      // Detect device and redirect accordingly
+      function detectDevice() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isMobile = /android|iphone/.test(userAgent);
+
+        if (isMobile && !window.location.href.includes(mobileSite)) {
+          window.location.href = mobileSite;
+        } else if (!isMobile && !window.location.href.includes(desktopSite)) {
+          window.location.href = desktopSite;
+        }
+      }
+
+      // Call the function when the script loads
+      detectDevice();
+
+      // Call the function on window resize
+      window.onresize = function () {
+        detectDevice();
+      };
+    </script>
   </head>
   <body>
     <header class="header">
