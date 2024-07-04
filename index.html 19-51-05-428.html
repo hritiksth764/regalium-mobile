@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("image copy 27.png"); /* Replace with your background image */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+      }
+      .form-container {
+        margin: 0 16px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+        text-align: left;
+      }
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .form-container label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .form-container input,
+      .form-container button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .form-container button {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      .form-container button:hover {
+        background-color: #333;
+      }
+      /* Styling for the select elements */
+      .form-container select {
+        display: block;
+        width: 100%;
+        padding: 12px 8px;
+        border-radius: 8px;
+        background: #fff;
+        border: 1px solid #ccc;
+        appearance: none; /* Ensure uniform appearance across browsers */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 12px 12px;
+      }
+      .form-container select::-ms-expand {
+        display: none;
+      }
+      .select-wrapper {
+        width: 100%;
+        position: relative;
+      }
+      .select-wrapper select {
+        width: 100%;
+      }
+      .thank-you-message {
+        display: none;
+        font-size: 18px;
+        color: green;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="userForm" onsubmit="handleSubmit(event)">
+        <label for="name">Full Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Full name"
+          required
+        />
+
+        <label for="email">Email Address:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email address"
+          required
+        />
+
+        <label for="phone">Phone Number:</label>
+        <div style="display: flex">
+          <select
+            id="countryCode"
+            name="countryCode"
+            style="flex: 1; max-width: 70px; margin-right: 10px"
+          >
+            <option value="+91">+91</option>
+            <option value="+1">+1</option>
+            <!-- Add more country codes as needed -->
+          </select>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone number"
+            style="flex: 3"
+            required
+          />
+        </div>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <div class="select-wrapper">
+          <label for="location">Location:</label>
+          <select id="location" name="location" required>
+            <option value="" disabled selected>Location</option>
+            <option value="location1">Location 1</option>
+            <option value="location2">Location 2</option>
+            <!-- Add more locations as needed -->
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label for="industry">Industry:</label>
+          <select id="industry" name="industry" required>
+            <option value="" disabled selected>Industry</option>
+            <option value="industry1">Industry 1</option>
+            <option value="industry2">Industry 2</option>
+            <!-- Add more industries as needed -->
+          </select>
+        </div>
+
+        <button type="submit">Join us</button>
+      </form>
+      <div class="thank-you-message" id="thankYouMessage">
+        Thank you for joining us!
+      </div>
+    </div>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        // Show thank you message
+        const thankYouMessage = document.getElementById("thankYouMessage");
+        thankYouMessage.style.display = "block";
+
+        // Redirect to home.html after 3 seconds
+        setTimeout(() => {
+          window.location.href = "/home.html";
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
