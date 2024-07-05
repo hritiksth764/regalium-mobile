@@ -18,6 +18,7 @@
         font-family: Arial, sans-serif;
       }
       .form-container {
+        display: none; /* Initially hide the form container */
         margin: 0 16px;
         background: rgba(255, 255, 255, 0.9);
         padding: 20px;
@@ -174,6 +175,9 @@
         const formSubmitted = getCookie("formSubmitted");
         if (formSubmitted) {
           window.location.href = "/home.html";
+        } else {
+          // Show the form container if the form has not been submitted
+          document.getElementById("formContainer").style.display = "block";
         }
       });
 
@@ -200,6 +204,7 @@
         )
           .then((response) => response.text())
           .then((responseText) => {
+            console.log("Response from server:", responseText); // Log the response for debugging
             if (responseText === "Success") {
               setCookie("formSubmitted", "true", 3650); // 10 years
               document.getElementById("thankYouMessage").style.display =
