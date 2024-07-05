@@ -163,14 +163,36 @@
       function handleSubmit(event) {
         event.preventDefault();
 
-        // Show thank you message
-        const thankYouMessage = document.getElementById("thankYouMessage");
-        thankYouMessage.style.display = "block";
+        const formData = new FormData(event.target);
+        const data = {
+          name: formData.get("name"),
+          email: formData.get("email"),
+          countryCode: formData.get("countryCode"),
+          phone: formData.get("phone"),
+          dob: formData.get("dob"),
+          location: formData.get("location"),
+          industry: formData.get("industry"),
+        };
 
-        // Redirect to home.html after 3 seconds
-        setTimeout(() => {
-          window.location.href = "/home.html";
-        }, 3000);
+        fetch(
+          "https://script.google.com/macros/s/AKfycbyQ1shFzg5QLt34TMVUfojNp9xV5Cx_hxqYVu4Az6evvHMyNJ2M9ZpBh-JQrl25RliZ/exec",
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+          }
+        )
+          .then((response) => {
+            if (response.ok) {
+              document.getElementById("thankYouMessage").style.display =
+                "block";
+              setTimeout(() => {
+                window.location.href = "/home.html";
+              }, 3000);
+            } else {
+              console.error("Error submitting form:", response.statusText);
+            }
+          })
+          .catch((error) => console.error("Error submitting form:", error));
       }
     </script>
   </body>
