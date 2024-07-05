@@ -85,10 +85,16 @@
         color: green;
         margin-top: 20px;
       }
+      .error-message {
+        display: none;
+        font-size: 18px;
+        color: red;
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
-    <div class="form-container">
+    <div class="form-container" id="formContainer">
       <form id="userForm" onsubmit="handleSubmit(event)">
         <label for="name">Full Name:</label>
         <input
@@ -157,9 +163,20 @@
       <div class="thank-you-message" id="thankYouMessage">
         Thank you for joining us!
       </div>
+      <div class="error-message" id="errorMessage">
+        An error occurred. Please try again.
+      </div>
     </div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        // Check if the user has already submitted the form
+        const formSubmitted = getCookie("formSubmitted");
+        if (formSubmitted) {
+          window.location.href = "/home.html";
+        }
+      });
+
       function handleSubmit(event) {
         event.preventDefault();
 
@@ -181,18 +198,46 @@
             body: JSON.stringify(data),
           }
         )
-          .then((response) => {
-            if (response.ok) {
+          .then((response) => response.text())
+          .then((responseText) => {
+            if (responseText === "Success") {
+              setCookie("formSubmitted", "true", 3650); // 10 years
               document.getElementById("thankYouMessage").style.display =
                 "block";
               setTimeout(() => {
                 window.location.href = "/home.html";
               }, 3000);
             } else {
-              console.error("Error submitting form:", response.statusText);
+              document.getElementById("errorMessage").style.display = "block";
             }
           })
-          .catch((error) => console.error("Error submitting form:", error));
+          .catch((error) => {
+            console.error("Error submitting form:", error);
+            document.getElementById("errorMessage").style.display = "block";
+          });
+      }
+
+      function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+      }
+
+      function getCookie(name) {
+        const cname = name + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) === " ") {
+            c = c.substring(1);
+          }
+          if (c.indexOf(cname) === 0) {
+            return c.substring(cname.length, c.length);
+          }
+        }
+        return "";
       }
     </script>
   </body>
