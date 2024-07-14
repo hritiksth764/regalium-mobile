@@ -107,11 +107,11 @@
             name="preferences"
             placeholder="Any Specific Requirements or Preferences?"
           />
-          <label
+          <!-- <label
             >Would you like to be part of the Multi-brand store/shop-in-store
             experience?</label
-          >
-          <div class="radio-group">
+          > -->
+          <!-- <div class="radio-group">
             <label for="yes">
               <input
                 type="radio"
@@ -138,8 +138,8 @@
               <input type="radio" id="other" name="multi_brand" value="other" />
               Other
             </label>
-          </div>
-          <label for="signature">Upload Signature (jpg/jpeg/png/webp):</label>
+          </div> -->
+          <!-- <label for="signature">Upload Signature (jpg/jpeg/png/webp):</label>
           <input
             type="file"
             id="signature"
@@ -154,7 +154,7 @@
             name="seal"
             accept=".jpg, .jpeg, .png, .webp"
             required
-          />
+          /> -->
           <button type="submit">Submit</button>
           <p class="disclaimer">
             *Please note that this EOI is intended solely for planning purposes
@@ -193,39 +193,41 @@
 
           var form = e.target;
           var formData = new FormData(form);
-          var signatureFile = document.getElementById("signature").files[0];
-          var sealFile = document.getElementById("seal").files[0];
 
-          var reader = new FileReader();
-          reader.readAsDataURL(signatureFile);
-          reader.onload = function () {
-            var signatureBase64 = reader.result.split(",")[1];
-            formData.append("signature", signatureBase64);
+          // Comment out the file handling parts
+          // var signatureFile = document.getElementById("signature").files[0];
+          // var sealFile = document.getElementById("seal").files[0];
 
-            var reader2 = new FileReader();
-            reader2.readAsDataURL(sealFile);
-            reader2.onload = function () {
-              var sealBase64 = reader2.result.split(",")[1];
-              formData.append("company_seal", sealBase64);
+          // var reader = new FileReader();
+          // reader.readAsDataURL(signatureFile);
+          // reader.onload = function () {
+          //   var signatureBase64 = reader.result.split(",")[1];
+          //   formData.append("signature", signatureBase64);
 
-              var xhr = new XMLHttpRequest();
-              xhr.open(
-                "POST",
-                "https://script.google.com/macros/s/AKfycbxxQ-https://script.google.com/macros/s/AKfycbw_l-SL6gr1x2bCBvZ_h09-llrQrBQZsGjeBpVH_4a8WOgpnZhu8-W3zWW22HgqrEDi/exec-Ng8XnFLQ5FG16FZMeQDQFzuzqEtILGUjYvC2O/exec"
-              ); // Replace with your web app URL
-              xhr.onload = function () {
-                if (xhr.status === 200) {
-                  document.getElementById("eoi-form").style.display = "none";
-                  document.getElementById("thank-you-message").style.display =
-                    "block";
-                } else {
-                  document.getElementById("error-message").style.display =
-                    "block";
-                }
-              };
-              xhr.send(formData);
-            };
+          //   var reader2 = new FileReader();
+          //   reader2.readAsDataURL(sealFile);
+          //   reader2.onload = function () {
+          //     var sealBase64 = reader2.result.split(",")[1];
+          //     formData.append("company_seal", sealBase64);
+
+          var xhr = new XMLHttpRequest();
+          xhr.open(
+            "POST",
+            "https://script.google.com/macros/s/AKfycbzVyOvKkXppIYnYcAjnogO1rC59KQ3JEsSrv63QR7x-hhcBAmSPjTAzmGqy-O7CfSL5/exec"
+          ); // Replace with your web app URL
+          xhr.onload = function () {
+            if (xhr.status === 200) {
+              document.getElementById("eoi-form").style.display = "none";
+              document.getElementById("thank-you-message").style.display =
+                "block";
+            } else {
+              document.getElementById("error-message").style.display = "block";
+            }
           };
+          xhr.send(formData);
+          //     };
+          //   };
+          // });
         });
 
       document.getElementById("phone").addEventListener("input", function (e) {
