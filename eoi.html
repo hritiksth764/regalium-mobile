@@ -172,46 +172,6 @@
             finalize the terms and conditions of the lease agreement.
           </p>
         </form>
-        <script>
-          document
-            .getElementById("eoi-form")
-            .addEventListener("submit", function (e) {
-              e.preventDefault();
-
-              var form = e.target;
-              var formData = new FormData(form);
-              var signatureFile = document.getElementById("signature").files[0];
-              var sealFile = document.getElementById("seal").files[0];
-
-              var reader = new FileReader();
-              reader.readAsDataURL(signatureFile);
-              reader.onload = function () {
-                var signatureBase64 = reader.result.split(",")[1];
-                formData.append("signature", signatureBase64);
-
-                var reader2 = new FileReader();
-                reader2.readAsDataURL(sealFile);
-                reader2.onload = function () {
-                  var sealBase64 = reader2.result.split(",")[1];
-                  formData.append("company_seal", sealBase64);
-
-                  var xhr = new XMLHttpRequest();
-                  xhr.open(
-                    "POST",
-                    "https://script.google.com/macros/s/AKfycbyYJbZM1WWIZJMSIkEl-CCmeI5YmjBxnUCVQzIJk9LOpq3c3pYUKwb1oxLfZYLXS3u8/exec"
-                  );
-                  xhr.onload = function () {
-                    if (xhr.status === 200) {
-                      alert("Form submitted successfully!");
-                    } else {
-                      alert("Form submission failed: " + xhr.responseText);
-                    }
-                  };
-                  xhr.send(formData);
-                };
-              };
-            });
-        </script>
       </section>
     </main>
 
@@ -225,5 +185,45 @@
       <h1>CONNECT WITH US</h1>
       <p>www.regalium.com | info@regalium.com</p>
     </footer>
+    <script>
+      document
+        .getElementById("eoi-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          var form = e.target;
+          var formData = new FormData(form);
+          var signatureFile = document.getElementById("signature").files[0];
+          var sealFile = document.getElementById("seal").files[0];
+
+          var reader = new FileReader();
+          reader.readAsDataURL(signatureFile);
+          reader.onload = function () {
+            var signatureBase64 = reader.result.split(",")[1];
+            formData.append("signature", signatureBase64);
+
+            var reader2 = new FileReader();
+            reader2.readAsDataURL(sealFile);
+            reader2.onload = function () {
+              var sealBase64 = reader2.result.split(",")[1];
+              formData.append("company_seal", sealBase64);
+
+              var xhr = new XMLHttpRequest();
+              xhr.open(
+                "POST",
+                "https://script.google.com/macros/s/AKfycbyYJbZM1WWIZJMSIkEl-CCmeI5YmjBxnUCVQzIJk9LOpq3c3pYUKwb1oxLfZYLXS3u8/exec"
+              );
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  alert("Form submitted successfully!");
+                } else {
+                  alert("Form submission failed: " + xhr.responseText);
+                }
+              };
+              xhr.send(formData);
+            };
+          };
+        });
+    </script>
   </body>
 </html>
