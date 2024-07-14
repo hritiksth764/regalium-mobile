@@ -12,11 +12,6 @@
   </head>
   <body>
     <header class="header">
-      <!-- <nav>
-        <a href="https://regalium.co.in/eoi" class="eoi-text"
-          >Expression of Interest</a
-        >
-      </nav> -->
       <img src="regaliumlogo2.png" alt="Regalium Logo" class="logo" />
     </header>
 
@@ -45,76 +40,73 @@
       <h2>EXPRESSION OF INTEREST</h2>
       <p>Please fill this form to sign the EOI (Expression of Interest)</p>
       <section class="form-section">
-        <!-- <h2>EXPRESSION OF INTEREST</h2>
-        <p>Please fill this form to sign the EOI (Expression of Interest)</p> -->
         <form id="eoi-form" enctype="multipart/form-data">
-          <!-- action="submit_form.php" method="POST" enctype="multipart/form-data" > -->
-          <!-- <label for="brand-name">Brand Name</label> -->
           <input
             class="first"
             type="text"
             id="brand-name"
+            name="brand_name"
             placeholder="Brand Name"
             required
           />
-
-          <!-- <label for="legal-entity">Legal Entity</label> -->
           <input
             type="text"
             id="legal-entity"
+            name="legal_entity"
             placeholder="Legal Entity"
             required
           />
-
-          <!-- <label for="dob">Date of Birth</label> -->
           <input
             type="text"
             id="dob-display"
+            name="dob"
             placeholder="Date of Birth (dd/mm/yyyy)"
             required
           />
-
-          <!-- <label for="phone">Phone Number</label> -->
           <input
             type="tel"
             id="phone"
+            name="phone"
             placeholder="Phone Number"
-            pattern="[+]{1}[0-9]{11,14}"
+            pattern="\+91[0-9]{10}"
+            title="Phone number must be in the format +91 98xxxxxxxx"
             required
           />
-
-          <!-- <label for="email">Email</label> -->
-          <input type="email" id="email" placeholder="email" required />
-
-          <!-- <label for="category">Category of Retail</label> -->
-          <input type="text" id="category" placeholder="category" required />
-
-          <!-- <label for="area">Approximate Carpet Area Requirement in Sq.Ft</label> -->
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            id="category"
+            name="category"
+            placeholder="Category of Retail"
+            required
+          />
           <input
             type="text"
             id="area"
+            name="area"
             placeholder="Approximate Carpet Area Requirement in Sq.Ft"
             required
           />
-
-          <!-- <label for="fit-out">Estimated Fit-Out Period Required</label> -->
           <input
             type="text"
             id="fit-out"
+            name="fit_out"
             placeholder="Estimated Fit-Out Period Required"
             required
           />
-
-          <!-- <label for="preferences"
-            >Any Specific Requirements or Preferences?</label
-          > -->
           <input
             class="last"
             type="text"
             id="preferences"
+            name="preferences"
             placeholder="Any Specific Requirements or Preferences?"
           />
-
           <label
             >Would you like to be part of the Multi-brand store/shop-in-store
             experience?</label
@@ -147,11 +139,11 @@
               Other
             </label>
           </div>
-
           <label for="signature">Upload Signature (jpg/jpeg/png/webp):</label>
           <input
             type="file"
             id="signature"
+            name="signature"
             accept=".jpg, .jpeg, .png, .webp"
             required
           />
@@ -159,12 +151,11 @@
           <input
             type="file"
             id="seal"
+            name="seal"
             accept=".jpg, .jpeg, .png, .webp"
             required
           />
-
           <button type="submit">Submit</button>
-          <!-- </form> -->
           <p class="disclaimer">
             *Please note that this EOI is intended solely for planning purposes
             and does not constitute a binding agreement. Upon receiving your
@@ -172,19 +163,28 @@
             finalize the terms and conditions of the lease agreement.
           </p>
         </form>
+        <div id="thank-you-message" style="display: none">
+          <h3>Thank you!</h3>
+          <p>Your form has been submitted successfully.</p>
+        </div>
+        <div id="error-message" style="display: none">
+          <h3>Submission Failed</h3>
+          <p>There was an error submitting your form. Please try again.</p>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
       <h1>ADDRESS</h1>
       <p>
-        Bungalow 375, 13th Main Road, 3rd Block Koramangala,<br />
-        Bengaluru, Karnataka 560034
+        Bungalow 375, 13th Main Road, 3rd Block Koramangala,<br />Bengaluru,
+        Karnataka 560034
       </p>
       <div class="line-separator"></div>
       <h1>CONNECT WITH US</h1>
       <p>www.regalium.com | info@regalium.com</p>
     </footer>
+
     <script>
       document
         .getElementById("eoi-form")
@@ -215,15 +215,30 @@
               );
               xhr.onload = function () {
                 if (xhr.status === 200) {
-                  alert("Form submitted successfully!");
+                  document.getElementById("eoi-form").style.display = "none";
+                  document.getElementById("thank-you-message").style.display =
+                    "block";
                 } else {
-                  alert("Form submission failed: " + xhr.responseText);
+                  document.getElementById("error-message").style.display =
+                    "block";
                 }
               };
               xhr.send(formData);
             };
           };
         });
+
+      document.getElementById("phone").addEventListener("input", function (e) {
+        var phoneInput = e.target;
+        var pattern = /^\+91\d{10}$/;
+        if (!pattern.test(phoneInput.value)) {
+          phoneInput.setCustomValidity(
+            "Phone number must be in the format +91 98xxxxxxxx"
+          );
+        } else {
+          phoneInput.setCustomValidity("");
+        }
+      });
     </script>
   </body>
 </html>

@@ -215,7 +215,7 @@ label {
   line-height: 160%; /* 22.4px */
 }
 
-.radio-group {
+radio-group {
   display: flex;
   flex-direction: column;
   margin-top: 5px;
@@ -226,7 +226,6 @@ label {
   align-items: center;
   margin-bottom: 10px;
   color: #111;
-
   font-family: "Avenir";
   font-size: 12px;
   font-style: normal;
@@ -245,6 +244,13 @@ label {
     no-repeat center center;
   background-size: contain;
   border: none;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"]:checked {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none"><circle cx="5" cy="5.14514" r="4.5" stroke="%23000000" fill="%23000000"/></svg>')
+    no-repeat center center;
+  background-size: contain;
 }
 
 .form-section button {
