@@ -196,7 +196,10 @@
                   formData.append("company_seal", sealBase64);
 
                   var xhr = new XMLHttpRequest();
-                  xhr.open("POST", "YOUR_WEB_APP_URL");
+                  xhr.open(
+                    "POST",
+                    "https://script.google.com/macros/s/AKfycbyYJbZM1WWIZJMSIkEl-CCmeI5YmjBxnUCVQzIJk9LOpq3c3pYUKwb1oxLfZYLXS3u8/exec"
+                  );
                   xhr.onload = function () {
                     if (xhr.status === 200) {
                       alert("Form submitted successfully!");
