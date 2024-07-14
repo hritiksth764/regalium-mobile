@@ -4,32 +4,223 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expression of Interest</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      h1 {
-        margin-top: 20px;
-      }
-      iframe {
-        width: 100%;
-        height: 100vh;
-        border: none;
-      }
-      @media (max-width: 768px) {
-        iframe {
-          height: 90vh;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="eoi.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Expression of Interest</h1>
-    <iframe src="https://regalium-registration.vercel.app/#form"></iframe>
+    <header class="header">
+      <!-- <nav>
+        <a href="https://regalium.co.in/eoi" class="eoi-text"
+          >Expression of Interest</a
+        >
+      </nav> -->
+      <img src="regaliumlogo2.png" alt="Regalium Logo" class="logo" />
+    </header>
+
+    <main class="main-content">
+      <section class="intro">
+        <h1>JOIN US AS REGALIUM</h1>
+        <p class="p1">A Realisation of the Future</p>
+        <br />
+        <p class="p2">
+          Please go through the
+          <a href="https://regalium.co.in/eoi" class="eoi-text"
+            >Expression of Interest</a
+          >
+          and fill out the below form.
+        </p>
+        <div class="scrollable-doc">
+          <iframe
+            src="https://docs.google.com/document/d/1WYJCks_tH5G7jggRPZ-l0LAkEz9_hN2GQWvRVvIoHxc/preview"
+            frameborder="0"
+          ></iframe>
+        </div>
+        <p>
+          Upload a signature and your company seal to complete this process.
+        </p>
+      </section>
+      <h2>EXPRESSION OF INTEREST</h2>
+      <p>Please fill this form to sign the EOI (Expression of Interest)</p>
+      <section class="form-section">
+        <!-- <h2>EXPRESSION OF INTEREST</h2>
+        <p>Please fill this form to sign the EOI (Expression of Interest)</p> -->
+        <form id="eoi-form" enctype="multipart/form-data">
+          action="submit_form.php" method="POST" enctype="multipart/form-data" >
+          <!-- <label for="brand-name">Brand Name</label> -->
+          <input
+            class="first"
+            type="text"
+            id="brand-name"
+            placeholder="Brand Name"
+            required
+          />
+
+          <!-- <label for="legal-entity">Legal Entity</label> -->
+          <input
+            type="text"
+            id="legal-entity"
+            placeholder="Legal Entity"
+            required
+          />
+
+          <!-- <label for="dob">Date of Birth</label> -->
+          <input
+            type="text"
+            id="dob-display"
+            placeholder="Date of Birth (dd/mm/yyyy)"
+            required
+          />
+
+          <!-- <label for="phone">Phone Number</label> -->
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            pattern="[+]{1}[0-9]{11,14}"
+            required
+          />
+
+          <!-- <label for="email">Email</label> -->
+          <input type="email" id="email" placeholder="email" required />
+
+          <!-- <label for="category">Category of Retail</label> -->
+          <input type="text" id="category" placeholder="category" required />
+
+          <!-- <label for="area">Approximate Carpet Area Requirement in Sq.Ft</label> -->
+          <input
+            type="text"
+            id="area"
+            placeholder="Approximate Carpet Area Requirement in Sq.Ft"
+            required
+          />
+
+          <!-- <label for="fit-out">Estimated Fit-Out Period Required</label> -->
+          <input
+            type="text"
+            id="fit-out"
+            placeholder="fEstimated Fit-Out Period Required"
+            required
+          />
+
+          <!-- <label for="preferences"
+            >Any Specific Requirements or Preferences?</label
+          > -->
+          <input
+            class="last"
+            type="text"
+            id="preferences"
+            placeholder="Any Specific Requirements or Preferences?"
+          />
+
+          <label
+            >Would you like to be part of the Multi-brand store/shop-in-store
+            experience?</label
+          >
+          <div class="radio-group">
+            <label for="yes">
+              <input
+                type="radio"
+                id="yes"
+                name="multi_brand"
+                value="yes"
+                required
+              />
+              Yes
+            </label>
+            <label for="no">
+              <input type="radio" id="no" name="multi_brand" value="no" /> No
+            </label>
+            <label for="looking-around">
+              <input
+                type="radio"
+                id="looking-around"
+                name="multi_brand"
+                value="looking_around"
+              />
+              I'm looking around
+            </label>
+            <label for="other">
+              <input type="radio" id="other" name="multi_brand" value="other" />
+              Other
+            </label>
+          </div>
+
+          <label for="signature">Upload Signature (jpg/jpeg/png/webp):</label>
+          <input
+            type="file"
+            id="signature"
+            accept=".jpg, .jpeg, .png, .webp"
+            required
+          />
+          <label for="seal">Upload Company Seal (jpg/jpeg/png/webp):</label>
+          <input
+            type="file"
+            id="seal"
+            accept=".jpg, .jpeg, .png, .webp"
+            required
+          />
+
+          <button type="submit">Submit</button>
+          <!-- </form> -->
+          <p class="disclaimer">
+            *Please note that this EOI is intended solely for planning purposes
+            and does not constitute a binding agreement. Upon receiving your
+            EOI, we will provide further details and engage in discussions to
+            finalize the terms and conditions of the lease agreement.
+          </p>
+        </form>
+        <script>
+          document
+            .getElementById("eoi-form")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              var form = e.target;
+              var formData = new FormData(form);
+              var signatureFile = document.getElementById("signature").files[0];
+              var sealFile = document.getElementById("seal").files[0];
+
+              var reader = new FileReader();
+              reader.readAsDataURL(signatureFile);
+              reader.onload = function () {
+                var signatureBase64 = reader.result.split(",")[1];
+                formData.append("signature", signatureBase64);
+
+                var reader2 = new FileReader();
+                reader2.readAsDataURL(sealFile);
+                reader2.onload = function () {
+                  var sealBase64 = reader2.result.split(",")[1];
+                  formData.append("company_seal", sealBase64);
+
+                  var xhr = new XMLHttpRequest();
+                  xhr.open("POST", "YOUR_WEB_APP_URL");
+                  xhr.onload = function () {
+                    if (xhr.status === 200) {
+                      alert("Form submitted successfully!");
+                    } else {
+                      alert("Form submission failed: " + xhr.responseText);
+                    }
+                  };
+                  xhr.send(formData);
+                };
+              };
+            });
+        </script>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <h1>ADDRESS</h1>
+      <p>
+        Bungalow 375, 13th Main Road, 3rd Block Koramangala,<br />
+        Bengaluru, Karnataka 560034
+      </p>
+      <div class="line-separator"></div>
+      <h1>CONNECT WITH US</h1>
+      <p>www.regalium.com | info@regalium.com</p>
+    </footer>
   </body>
 </html>
