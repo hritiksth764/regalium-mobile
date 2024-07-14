@@ -150,9 +150,12 @@
       });
 
       function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent the default form submission
 
+        // Create a FormData object from the form element
         const formData = new FormData(event.target);
+
+        // Extract values from the FormData object using the get method
         const data = {
           brand_name: formData.get("brand_name"),
           legal_entity: formData.get("legal_entity"),
@@ -165,8 +168,11 @@
           preferences: formData.get("preferences"),
         };
 
+        console.log("Form Data: ", data); // Log form data for debugging
+
+        // Send the data to the server using fetch
         fetch(
-          "https://script.google.com/macros/s/AKfycbwxYEB-nLFgqsONJB0MkHj7QmE6RHtiWOMt4YFoQ6fTd1Yin49baK4YG1siNOIgWzzpvg/exec",
+          "https://script.google.com/macros/s/AKfycbxt9jgMvaJHryBRXPn2iXssJyrdlbRqnxir0ljUqTFwfWySkVKe5oKsvmI8gkHV0Qcu/exec",
           {
             method: "POST",
             headers: {
@@ -194,7 +200,6 @@
             document.getElementById("error-message").style.display = "block";
           });
       }
-
       document
         .getElementById("eoi-form")
         .addEventListener("submit", handleSubmit);
