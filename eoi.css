@@ -110,7 +110,7 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: 180%;
-  text-decoration-line: underline;
+  /* text-decoration-line: underline; */
 }
 
 .scrollable-doc {
@@ -122,6 +122,18 @@ body {
   height: 300px; /* Adjust height as needed */
   overflow: auto;
   margin-bottom: 0px !important;
+}
+
+.download-link a {
+  text-align: center;
+  margin: 10px 0;
+  color: #c14535;
+  font-family: "Avenir", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 180%;
+  text-decoration-line: underline;
 }
 
 p {
@@ -159,7 +171,7 @@ h2 {
   line-height: normal;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 84px;
+  margin-top: 74px;
 }
 
 .form-section {
