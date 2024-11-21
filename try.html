@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locomotive Scroll Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.css"
+    />
+    <style>
+      body {
+        font-family: "Merriweather", serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+      }
+      .section {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        box-sizing: border-box;
+        margin: 2rem 0;
+      }
+      .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .text-container {
+        max-width: 800px;
+        padding: 1rem;
+      }
+      .location-heading {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .paragraph-box p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .section:nth-child(odd) {
+        background: #ffffff;
+      }
+      .section:nth-child(even) {
+        background: #eaeaea;
+      }
+    </style>
+  </head>
+  <body data-scroll-container>
+    <div id="theLocation" class="section theLocation" data-scroll-section>
+      <div class="image-container" data-scroll data-scroll-speed="1">
+        <img src="image copy.png" alt="Image Description" />
+      </div>
+      <div class="text-container">
+        <h2 class="location-heading" data-scroll data-scroll-speed="3">
+          THE LOCATION
+        </h2>
+        <div class="paragraph-box" data-scroll data-scroll-speed="1.5">
+          <p>
+            Our location strategically represents both our innovative vision and
+            the Machani Group legacy. As the heart of the dynamic city of
+            Bengaluru, Koramangala is the perfect location for our exclusive
+            group of members to come together. There is also a growing gap
+            between people, physical spaces, and culture in Bengaluru, and by
+            being situated at Koramangala, Regalium is uniquely poised to
+            succeed as a luxurious and thriving community hub.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional content sections for scrolling -->
+    <div class="section" data-scroll-section>
+      <div class="text-container">
+        <h2 data-scroll data-scroll-speed="3">OUR VISION</h2>
+        <p data-scroll data-scroll-speed="1.5">
+          Our vision is to create a space that brings together the best of
+          technology, community, and sustainability. We aim to foster a sense of
+          belonging and innovation through our thoughtfully designed spaces.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" data-scroll-section>
+      <div class="image-container" data-scroll data-scroll-speed="2">
+        <img src="image copy2.png" alt="Another Image Description" />
+      </div>
+    </div>
+
+    <div class="section" data-scroll-section>
+      <div class="text-container">
+        <h2 data-scroll data-scroll-speed="3">OUR MISSION</h2>
+        <p data-scroll data-scroll-speed="1.5">
+          Our mission is to build a community that not only lives but thrives.
+          Through our innovative approaches and dedicated services, we aim to
+          enhance the quality of life for all our members.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" data-scroll-section>
+      <div class="image-container" data-scroll data-scroll-speed="1.5">
+        <img src="image copy3.png" alt="Yet Another Image Description" />
+      </div>
+    </div>
+
+    <div class="section" data-scroll-section>
+      <div class="text-container">
+        <h2 data-scroll data-scroll-speed="3">JOIN US</h2>
+        <p data-scroll data-scroll-speed="1.5">
+          Become a part of a community that values growth, innovation, and
+          sustainability. Join us on our journey to create a better future.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.6/dist/locomotive-scroll.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const scroll = new LocomotiveScroll({
+          el: document.querySelector("[data-scroll-container]"),
+          smooth: true,
+          getDirection: true,
+        });
+
+        scroll.on("scroll", (args) => {
+          console.log(args);
+        });
+      });
+    </script>
+  </body>
+</html>
