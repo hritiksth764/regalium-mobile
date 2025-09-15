@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "work sans";
+  src: url("fonts/WorkSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.container {
+  padding: 40px 0px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #b79a4c; /* Gold shade */
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-size: 15px;
+  font-family: "work sans";
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 20px;
+  color: #999;
+  font-weight: bold;
+}
+
+.building {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.info-section {
+  text-align: left;
+  padding: 0 40px;
+}
+
+.coming-soon {
+  font-size: 20px !important;
+  font-family: "work sans";
+  font-style: normal;
+  font-weight: 600;
+  color: #6a512b;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 14px;
+  font-family: "work sans";
+  font-weight: 400;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.cta-button {
+  display: block;
+  margin-top: 25px;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+}
